@@ -9,4 +9,13 @@
     <string name="individual_customer_service">客服中心</string>
     <string name="individual_settings">设置</string>
     <string name="individual_qr_code">二维码</string>
+
+    <string name="personal_info_title">个人信息</string>
+    <string name="personal_info_name">姓名</string>
+    <string name="personal_info_avatar">头像</string>
+    <string name="personal_info_phone">电话号码</string>
+    <string name="personal_info_address">地址</string>
+    <string name="personal_info_email">邮箱</string>
+    <string name="personal_info_gender">性别</string>
+
 </resources>

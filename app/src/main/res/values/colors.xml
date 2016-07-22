@@ -10,5 +10,9 @@
 
     <color name="bg_gray">#EDEDED</color>
     <color name="bg_white">#FFFFFF</color>
+
     <color name="text_black">#3e3e39</color>
+    <color name="text_white">#ffffff</color>
+    <color name="color_line">#dadada</color>
+
 </resources>

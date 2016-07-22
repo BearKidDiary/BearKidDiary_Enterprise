@@ -64,6 +64,7 @@
         </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
+        android:id="@+id/rl_individual_resume"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_item_individual"
@@ -88,6 +89,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_individual_organization"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_item_individual"
@@ -111,6 +113,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_individual_customer_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_item_individual"
@@ -134,6 +137,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_individual_settings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_item_individual"
@@ -157,6 +161,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_individual_qr_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_item_individual"
