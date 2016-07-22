@@ -3,4 +3,10 @@
     <string name="tabView_1">消息</string>
     <string name="tabView_2">机构</string>
     <string name="tabView_3">个人</string>
+
+    <string name="individual_resume">个人简历</string>
+    <string name="individual_organization">机构管理</string>
+    <string name="individual_customer_service">客服中心</string>
+    <string name="individual_settings">设置</string>
+    <string name="individual_qr_code">二维码</string>
 </resources>

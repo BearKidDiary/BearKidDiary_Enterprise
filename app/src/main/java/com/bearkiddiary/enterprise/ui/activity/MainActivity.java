@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.fragment.MessageFragment;
 import com.bearkiddiary.enterprise.ui.fragment.OrganizationFragment;
-import com.bearkiddiary.enterprise.ui.fragment.PersonalInfoFragment;
+import com.bearkiddiary.enterprise.ui.fragment.IndividualFragment;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout[] tab = new LinearLayout[3];
@@ -76,7 +76,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     mFragments[1] = new OrganizationFragment();
                     break;
                 case 2:
-                    mFragments[2] = new PersonalInfoFragment();
+                    mFragments[2] = new IndividualFragment();
                     break;
                 default:
                     break;

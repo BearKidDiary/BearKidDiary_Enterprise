@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/bg_grey">
+        android:background="@color/bg_gray">
 
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:baselineAligned="false">
+        android:baselineAligned="false"
+        android:background="#fff">
 
         <LinearLayout
             android:id="@+id/activity_main_tab1"
@@ -42,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/tabView_1"
-                android:textColor="@color/text_grey" />
+                android:textColor="@color/text_black" />
         </LinearLayout>
 
         <View
@@ -50,7 +51,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@color/bg_grey"/>
+            android:background="@color/bg_gray"/>
 
         <LinearLayout
             android:id="@+id/activity_main_tab2"
@@ -73,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/tabView_2"
-                android:textColor="@color/text_grey" />
+                android:textColor="@color/text_black" />
         </LinearLayout>
 
         <View
@@ -81,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:background="@color/bg_grey"/>
+            android:background="@color/bg_gray"/>
 
         <LinearLayout
             android:id="@+id/activity_main_tab3"
@@ -104,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/tabView_3"
-                android:textColor="@color/text_grey" />
+                android:textColor="@color/text_black" />
         </LinearLayout>
 
     </LinearLayout>
