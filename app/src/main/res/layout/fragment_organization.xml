@@ -4,5 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary">
 
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spinner_organization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tv_organization_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="日常管理"
+            android:textColor="@color/txt_title"
+            android:textSize="20sp" />
+
+        <com.bearkiddiary.enterprise.ui.view.IconButton
+            android:id="@+id/ib_location"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:padding="8dp"
+            android:src="@drawable/location" />
+    </RelativeLayout>
 </LinearLayout>
