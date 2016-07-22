@@ -1,7 +1,14 @@
 package com.bearkiddiary.enterprise.ui.fragment;
 
-/**
- * Created by admin on 2016/7/22.
- */
-public class BaseFragment {
+import android.support.v4.app.Fragment;
+import android.widget.Toast;
+
+import com.bearkiddiary.enterprise.ui.fragment.ifragment.IBaseFragment;
+
+public class BaseFragment extends Fragment implements IBaseFragment {
+    @Override
+    public void showToast(String str) {
+        if (getContext() != null)
+            Toast.makeText(getContext(), str, Toast.LENGTH_SHORT).show();
+    }
 }
