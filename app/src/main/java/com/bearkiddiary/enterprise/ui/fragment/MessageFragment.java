@@ -29,12 +29,10 @@ public class MessageFragment extends BaseFragment {
         return view;
     }
 
-    class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>
-    {
+    class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
         @Override
-        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-        {
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             MyViewHolder holder = new MyViewHolder(LayoutInflater.from(
                     mContext).inflate(R.layout.item_message, parent,
                     false));
@@ -42,8 +40,7 @@ public class MessageFragment extends BaseFragment {
         }
 
         @Override
-        public void onBindViewHolder(MyViewHolder holder, int position)
-        {
+        public void onBindViewHolder(MyViewHolder holder, int position) {
             //holder.txt.setText("1");//mDatas.get(position)
             holder.root.setTag(position);
             holder.root.setOnClickListener(new View.OnClickListener() {
@@ -55,17 +52,15 @@ public class MessageFragment extends BaseFragment {
         }
 
         @Override
-        public int getItemCount()
-        {
+        public int getItemCount() {
             return 5;//mDatas.size()
         }
 
-        class MyViewHolder extends RecyclerView.ViewHolder
-        {
+        class MyViewHolder extends RecyclerView.ViewHolder {
             LinearLayout root;
             TextView txt;
-            public MyViewHolder(View view)
-            {
+
+            public MyViewHolder(View view) {
                 super(view);
                 root = (LinearLayout) view.findViewById(R.id.item_message_root);
                 txt = (TextView) view.findViewById(R.id.item_message_txt);

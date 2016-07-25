@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/bg_gray"
+    tools:context="com.bearkiddiary.enterprise.ui.activity.OrganizationInfoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_title_back_organization_info"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:src="@drawable/selector_title_back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/organization_info_title"
+            android:textColor="@color/txt_title"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_organization_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_item_individual"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_organization_info_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/avatar" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginLeft="8dp"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/tv_organization_info_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="春田花花幼稚园"
+                android:textSize="20sp"
+                android:textColor="@color/text_black"/>
+
+            <TextView
+                style="@style/style_text_black"
+                android:id="@+id/tv_organization_info_time_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:singleLine="true"
+                android:text="创建时间"/>
+
+            <TextView
+                style="@style/style_text_black"
+                android:id="@+id/tv_organization_info_time"
+                android:layout_toRightOf="@+id/tv_organization_info_time_hint"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:singleLine="true"
+                android:text="2016-01-01"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_organization_info_home"
+        style="@style/style_text_black"
+        android:background="@drawable/selector_item_individual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:text="@string/organization_info_home"/>
+    <TextView
+        android:id="@+id/tv_organization_info_employee"
+        style="@style/style_text_black"
+        android:background="@drawable/selector_item_individual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:text="@string/organization_info_employee"/>
+    <TextView
+        android:id="@+id/tv_organization_info_qr_code"
+        style="@style/style_text_black"
+        android:background="@drawable/selector_item_individual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:text="@string/organization_info_qr_code"/>
+    <TextView
+        android:id="@+id/tv_organization_info_identification"
+        style="@style/style_text_black"
+        android:background="@drawable/selector_item_individual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:text="@string/organization_info_identification"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_organization_info_dismiss"
+            style="@style/style_text_white"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginRight="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/selector_btn_dismiss"
+            android:text="@string/organization_info_dismiss"/>
+
+    </RelativeLayout>
+</LinearLayout>

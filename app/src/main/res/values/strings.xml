@@ -18,4 +18,18 @@
     <string name="personal_info_email">邮箱</string>
     <string name="personal_info_gender">性别</string>
 
+    <string name="organization_info_title">我的机构</string>
+    <string name="organization_info_home">机构主页</string>
+    <string name="organization_info_dismiss">解散</string>
+    <string name="organization_info_employee">机构员工</string>
+    <string name="organization_info_qr_code">二维码</string>
+    <string name="organization_info_identification">认证</string>
+
+    <string name="resume_title">个人简历</string>
+    <string name="editable">编辑</string>
+    <string name="resume_contact">联系方式</string>
+    <string name="resume_work_experience">工作经历</string>
+    <string name="resume_education">教育经历</string>
+    <string name="resume_specialties">我的专长</string>
+
 </resources>

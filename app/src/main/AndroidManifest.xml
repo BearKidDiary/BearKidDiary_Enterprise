@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.PersonalInfoActivity" />
-        <activity android:name=".ui.activity.OrganizationMgmtActivity"></activity>
+        <activity android:name=".ui.activity.OrganizationMgmtActivity" />
+        <activity android:name=".ui.activity.OrganizationInfoActivity" />
+        <activity android:name=".ui.activity.ResumeActivity"></activity>
     </application>
 
 </manifest>
