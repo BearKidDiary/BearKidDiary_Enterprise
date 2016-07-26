@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.OrganizationMgmtActivity;
 import com.bearkiddiary.enterprise.ui.activity.PersonalInfoActivity;
+import com.bearkiddiary.enterprise.ui.activity.ResumeActivity;
 
 /**
  * Created by yarenChoi on 2016/7/22.
@@ -51,6 +52,7 @@ public class IndividualFragment extends BaseFragment implements View.OnClickList
                 PersonalInfoActivity.startActivity(mContext);
                 break;
             case R.id.rl_individual_resume:
+                ResumeActivity.startActivity(mContext);
                 break;
             case R.id.rl_individual_organization:
                 OrganizationMgmtActivity.startActivity(mContext);

@@ -6,7 +6,7 @@
     android:background="@color/bg_light"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.bearkiddiary.enterprise.ui.activity.OrganizationMgmtActivity">
+    tools:context=".ui.activity.OrganizationMgmtActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,14 +14,15 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/iv_title_back_personal_info"
+            android:id="@+id/iv_title_back_organization_mgmt"
             android:layout_width="32dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:src="@drawable/selector_title_back" />
+            android:src="@drawable/selector_title_back"
+            android:clickable="true"/>
 
 
         <TextView
@@ -33,7 +34,7 @@
             android:textSize="20sp" />
 
         <com.bearkiddiary.enterprise.ui.view.IconButton
-            android:id="@+id/ib_family_member_add"
+            android:id="@+id/ibtn_organization_mgmt"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
@@ -44,7 +45,7 @@
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_family_member"
+        android:id="@+id/rv_organization"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
