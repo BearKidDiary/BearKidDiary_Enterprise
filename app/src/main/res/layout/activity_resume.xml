@@ -63,28 +63,36 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tv_resume_name"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="王大锤"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_resume_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_resume_gender"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"/>
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/tv_resume_major"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="计算机专业" />
+                        android:layout_margin="4dp" />
 
                     <TextView
                         android:id="@+id/tv_resume_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="广东 广州" />
+                        android:layout_margin="4dp" />
                 </LinearLayout>
 
                 <TextView
@@ -128,8 +136,7 @@
                         style="@style/style_text_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="123123123@163.com" />
+                        android:layout_marginLeft="8dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -149,8 +156,7 @@
                         style="@style/style_text_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="15626152111" />
+                        android:layout_marginLeft="8dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -170,8 +176,7 @@
                         style="@style/style_text_black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="886644889" />
+                        android:layout_marginLeft="8dp" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -205,6 +210,25 @@
                     android:layout_height="wrap_content"
                     android:text="@string/resume_work_experience" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+                <TextView
+                    android:id="@+id/tv_resume_add_work_exp"
+                    style="@style/style_text_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_btn_add"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:text="@string/resume_add"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_resume_education"
@@ -225,6 +249,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+                <TextView
+                    android:id="@+id/tv_resume_add_edu_exp"
+                    style="@style/style_text_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_btn_add"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:text="@string/resume_add"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="@color/bg_white"
                 android:orientation="vertical"
@@ -240,8 +284,21 @@
                     style="@style/style_text_black"
                     android:padding="8dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="擅长html、js等啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+                    android:layout_height="wrap_content"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/style_text_clickable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:clickable="true"
+                        android:text="@string/editable"
+                        android:id="@+id/tv_resume_edit_specialties"/>
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

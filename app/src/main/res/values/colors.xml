@@ -15,9 +15,13 @@
     <color name="text_white">#ffffffff</color>
     <color name="color_line">#ffdadada</color>
     <color name="text_clickable">#ff82ab</color>
+    <color name="text_clicked">#FF7F8F</color>
     <color name="text_gray">#d7d7d7</color>
 
     <color name="color_red_light">#cf0000</color>
     <color name="color_red_dark">#9f0000</color>
+
+    <color name="gender_normal">#EDEDED</color>
+    <color name="gender_choose">#ff82ab</color>
 
 </resources>

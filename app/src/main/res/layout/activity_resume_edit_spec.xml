@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.bearkiddiary.enterprise.ui.activity.ResumeEditSpecActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_title_back_resume_edit_spec"
+            android:layout_width="32dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:clickable="true"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:src="@drawable/selector_title_back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/resume_edit_spec"
+            android:textColor="@color/txt_title"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/style_text_hint"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/resume_spec"
+            android:padding="8dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"/>
+
+        <EditText
+            android:id="@+id/et_resume_spec"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/hint_spec"
+            android:textColorHint="@color/text_gray"
+            android:background="@drawable/drawable_edit_normal"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"/>
+
+        <Button
+            android:id="@+id/btn_resume_spec_save"
+            style="@style/style_text_white"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_btn_add"
+            android:text="@string/resume_edit_save"/>
+    </LinearLayout>
+
+</LinearLayout>
