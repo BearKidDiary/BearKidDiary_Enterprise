@@ -15,7 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.ui.activity.CourseActivity;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
+import com.gc.materialdesign.views.Card;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 
@@ -98,7 +100,7 @@ public class OrganizationFragment extends BaseFragment {
 
         @Override
         public void onBindViewHolder(OrganizationViewHolder holder, int position) {
-
+            holder.card_course.setOnClickListener(view -> CourseActivity.startActivity(getContext()));
         }
 
         @Override
@@ -109,9 +111,11 @@ public class OrganizationFragment extends BaseFragment {
         class OrganizationViewHolder extends RecyclerView.ViewHolder {
 
             private TextView tv_name, tv_teacher, tv_time;
+            private Card card_course;
 
             public OrganizationViewHolder(View v) {
                 super(v);
+                card_course = (Card) v.findViewById(R.id.card_organization_course);
                 tv_name = (TextView) v.findViewById(R.id.tv_organization_course_name);
                 tv_teacher = (TextView) v.findViewById(R.id.tv_organization_course_teacher);
                 tv_time = (TextView) v.findViewById(R.id.tv_organization_course_time);

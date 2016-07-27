@@ -14,11 +14,8 @@
     <color name="text_black">#ff3e3e39</color>
     <color name="text_white">#ffffffff</color>
     <color name="color_line">#ffdadada</color>
-    <color name="text_black">#3e3e39</color>
-    <color name="text_white">#ffffff</color>
     <color name="text_clickable">#ff82ab</color>
     <color name="text_gray">#d7d7d7</color>
-    <color name="color_line">#dadada</color>
 
     <color name="color_red_light">#cf0000</color>
     <color name="color_red_dark">#9f0000</color>

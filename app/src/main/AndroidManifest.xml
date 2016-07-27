@@ -24,7 +24,9 @@
         <activity android:name=".ui.activity.PersonalInfoActivity" />
         <activity android:name=".ui.activity.OrganizationMgmtActivity" />
         <activity android:name=".ui.activity.OrganizationInfoActivity" />
-        <activity android:name=".ui.activity.ResumeActivity"></activity>
+        <activity android:name=".ui.activity.ResumeActivity" />
+        <activity android:name=".ui.activity.CourseActivity" />
+        <activity android:name=".ui.activity.StaffActivity"></activity>
     </application>
 
 </manifest>
