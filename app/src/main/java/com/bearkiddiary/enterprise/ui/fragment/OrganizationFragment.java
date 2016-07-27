@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.CourseActivity;
+import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 import com.gc.materialdesign.views.Card;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -52,6 +53,8 @@ public class OrganizationFragment extends BaseFragment {
         spinner_org = (AppCompatSpinner) v.findViewById(R.id.spinner_organization);
         ll_manager = (LinearLayout) v.findViewById(R.id.ll_organization_manager);
         ll_org = (LinearLayout) v.findViewById(R.id.ll_organization);
+
+        ib_location.setOnClickListener(view -> StaffActivity.startActivity(getContext()));
 
         //如果是机构管理员，则显示管理员的选项界面
         vs_manager.inflate();
