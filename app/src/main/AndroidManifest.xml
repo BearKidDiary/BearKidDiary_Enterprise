@@ -24,7 +24,10 @@
         <activity android:name=".ui.activity.PersonalInfoActivity" />
         <activity android:name=".ui.activity.OrganizationMgmtActivity" />
         <activity android:name=".ui.activity.OrganizationInfoActivity" />
-        <activity android:name=".ui.activity.ResumeActivity"></activity>
+        <activity android:name=".ui.activity.ResumeActivity" />
+        <activity android:name=".ui.activity.ResumeEditInfoActivity" />
+        <activity android:name=".ui.activity.ResumeEditContactActivity" />
+        <activity android:name=".ui.activity.ResumeEditSpecActivity"></activity>
     </application>
 
 </manifest>

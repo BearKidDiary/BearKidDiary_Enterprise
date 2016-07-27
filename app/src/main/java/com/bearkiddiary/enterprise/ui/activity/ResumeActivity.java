@@ -3,6 +3,7 @@ package com.bearkiddiary.enterprise.ui.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -16,6 +17,7 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
     protected TextView nameTv;
     protected TextView majorTv;
     protected TextView addressTv;
+    protected ImageView genderIv;
 
     protected TextView emailTv;
     protected TextView phoneNumTv;
@@ -34,6 +36,7 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
 
     private void initView() {
         avatarIv = (ImageView) findViewById(R.id.iv_resume_avatar);
+        genderIv = (ImageView) findViewById(R.id.iv_resume_gender);
         nameTv = (TextView) findViewById(R.id.tv_resume_name);
         majorTv = (TextView) findViewById(R.id.tv_resume_major);
         addressTv = (TextView) findViewById(R.id.tv_resume_address);
@@ -48,10 +51,16 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
         ImageView back = (ImageView) findViewById(R.id.iv_title_back_resume);
         TextView editInfoTv = (TextView) findViewById(R.id.tv_resume_edit_info);
         TextView editContactTv = (TextView) findViewById(R.id.tv_resume_edit_contact);
+        TextView editSpecialtiesTv = (TextView) findViewById(R.id.tv_resume_edit_specialties);
+        TextView addWorkExp = (TextView) findViewById(R.id.tv_resume_add_work_exp);
+        TextView addEduExp = (TextView) findViewById(R.id.tv_resume_add_edu_exp);
 
         back.setOnClickListener(this);
         editInfoTv.setOnClickListener(this);
         editContactTv.setOnClickListener(this);
+        editSpecialtiesTv.setOnClickListener(this);
+        addWorkExp.setOnClickListener(this);
+        addEduExp.setOnClickListener(this);
     }
 
     @Override
@@ -61,8 +70,26 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
                 finish();
                 break;
             case R.id.tv_resume_edit_info:
+                int gender = ResumeEditInfoActivity.MALE;
+                ResumeEditInfoActivity.startActivity(ResumeActivity.this,
+                        nameTv.getText().toString(),
+                        gender,
+                        addressTv.getText().toString(),
+                        majorTv.getText().toString());
                 break;
             case R.id.tv_resume_edit_contact:
+                ResumeEditContactActivity.startActivity(ResumeActivity.this,
+                        phoneNumTv.getText().toString(),
+                        emailTv.getText().toString(),
+                        qqTv.getText().toString());
+                break;
+            case R.id.tv_resume_edit_specialties:
+                ResumeEditSpecActivity.startActivity(ResumeActivity.this,
+                        specialtiesTv.getText().toString());
+                break;
+            case R.id.tv_resume_add_work_exp:
+                break;
+            case R.id.tv_resume_add_edu_exp:
                 break;
             default:
                 break;
@@ -77,6 +104,11 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
     @Override
     public void setName(String name) {
         nameTv.setText(name);
+    }
+
+    @Override
+    public void setGender(int imgResource) {
+        genderIv.setImageResource(imgResource);
     }
 
     @Override
@@ -105,13 +137,38 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
     }
 
     @Override
-    public void showWorkExperience() {
+    public void showWorkExperience(String startDate, String endDate, String job, String company, String desc) {
+        LinearLayout ll_exp = new LinearLayout(ResumeActivity.this);
+        View expView = LayoutInflater.from(ResumeActivity.this).inflate(R.layout.item_resume_experience, ll_exp);
+        ((TextView)expView.findViewById(R.id.item_resume_start_date)).setText(startDate);
+        ((TextView)expView.findViewById(R.id.item_resume_end_date)).setText(endDate);
+        ((TextView)expView.findViewById(R.id.item_resume_tv_1)).setText(job);
+        ((TextView)expView.findViewById(R.id.item_resume_tv_2)).setText(company);
+        ((TextView)expView.findViewById(R.id.item_resume_tv_3)).setText(desc);
+        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view -> {
 
+        });
+        expView.findViewById(R.id.item_resume_delete).setOnClickListener(view -> {
+
+        });
+        ll_work.addView(ll_exp);
     }
 
     @Override
-    public void showEduExperience() {
+    public void showEduExperience(String startDate, String endDate, String major, String school) {
+        LinearLayout ll_exp = new LinearLayout(ResumeActivity.this);
+        View expView = LayoutInflater.from(ResumeActivity.this).inflate(R.layout.item_resume_experience, ll_exp);
+        ((TextView)expView.findViewById(R.id.item_resume_start_date)).setText(startDate);
+        ((TextView)expView.findViewById(R.id.item_resume_end_date)).setText(endDate);
+        ((TextView)expView.findViewById(R.id.item_resume_tv_1)).setText(major);
+        ((TextView)expView.findViewById(R.id.item_resume_tv_2)).setText(school);
+        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view -> {
 
+        });
+        expView.findViewById(R.id.item_resume_delete).setOnClickListener(view -> {
+
+        });
+        ll_edu.addView(ll_exp);
     }
 
     @Override

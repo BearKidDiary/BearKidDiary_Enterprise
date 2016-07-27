@@ -31,5 +31,24 @@
     <string name="resume_work_experience">工作经历</string>
     <string name="resume_education">教育经历</string>
     <string name="resume_specialties">我的专长</string>
+    <string name="resume_add">+ 新增</string>
+    <string name="delete">删除</string>
+    <string name="resume_edit_info">编辑个人信息</string>
+    <string name="resume_edit_name">姓名</string>
+    <string name="resume_edit_gender">性别</string>
+    <string name="resume_edit_address">现居地</string>
+    <string name="hint_address">省/市</string>
+    <string name="resume_edit_major">专业</string>
+    <string name="resume_edit_save">保存</string>
+    <string name="resume_edit_contact">编辑联系方式</string>
+    <string name="resume_edit_contact_qq">QQ</string>
+    <string name="resume_edit_contact_mail">邮箱</string>
+    <string name="resume_edit_contact_phone">手机</string>
+    <string name="resume_edit_spec">编辑我的专长</string>
+    <string name="hint_spec">编辑你的专长</string>
+    <string name="resume_spec">专长</string>
+
+    <string name="male">男</string>
+    <string name="female">女</string>
 
 </resources>

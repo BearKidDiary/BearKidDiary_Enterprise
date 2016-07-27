@@ -8,6 +8,8 @@ public interface IResumeView extends IBaseView {
 
     void setName(String name);
 
+    void setGender(int imgResource);
+
     void setMajor(String major);
 
     void setAddress(String address);
@@ -18,9 +20,9 @@ public interface IResumeView extends IBaseView {
 
     void setQQ(String qq);
 
-    void showWorkExperience();
+    void showWorkExperience(String startDate, String endDate, String job, String company, String desc);
 
-    void showEduExperience();
+    void showEduExperience(String startDate, String endDate, String major, String school);
 
     void setSpecialties(String specialties);
 
