@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/bg_light"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.OrganizationFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +20,6 @@
             android:layout_marginLeft="16dp" />
 
         <TextView
-            android:id="@+id/tv_organization_manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -35,4 +37,47 @@
             android:padding="8dp"
             android:src="@drawable/location" />
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_organization"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ll_organization_manager"
+            android:layout_width="match_parent"
+            android:layout_height="104dp">
+
+            <ViewStub
+                android:id="@+id/vs_organization_manager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/item_organization_manager" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_organization_down"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="8dp"
+            android:src="@drawable/manager_down_arrow" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffffff" />
+
+        <ImageView
+            android:id="@+id/iv_organization_up"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right"
+            android:padding="8dp"
+            android:src="@drawable/manager_up_arrow" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_organization_course"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>
