@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.CourseAdminActivity;
+import com.bearkiddiary.enterprise.ui.activity.CourseTeacherActivity;
 import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
 import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
@@ -135,7 +136,10 @@ public class OrganizationFragment extends BaseFragment {
 
         @Override
         public void onBindViewHolder(OrganizationViewHolder holder, int position) {
-            holder.card_course.setOnClickListener(view -> CourseAdminActivity.startActivity(getContext()));
+            holder.card_course.setOnClickListener(view -> {
+                //TODO:根据当前身份作不同的跳转
+                CourseTeacherActivity.startActivity(getContext());
+            });
         }
 
         @Override

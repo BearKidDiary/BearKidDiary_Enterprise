@@ -14,6 +14,18 @@
         android:text="班级动态"
         android:textColor="@color/text_white"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_course_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="6"
+        android:minLines="3"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:text="暂无更新的动态" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
