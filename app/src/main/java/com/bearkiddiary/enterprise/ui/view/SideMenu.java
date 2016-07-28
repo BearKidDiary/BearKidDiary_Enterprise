@@ -47,8 +47,77 @@ public class SideMenu extends RelativeLayout {
     private List<View> menuItem = new ArrayList<>();
 
     protected void init(Context context) {
-        menu = LayoutInflater.from(context).inflate(R.layout.item_side_menu, SideMenu.this, false);
-        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
+    }
+
+    private boolean trigger = false;
+    private float pressX, pressY;
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            pressX = event.getX();
+            pressY = event.getY();
+            trigger = true;
+            return false;
+        }
+        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+            //若水平方向上移动较大 则拦截事件进行处理
+            if (Math.abs(event.getX() - pressX) > Math.abs(event.getY() - pressY))
+                return true;
+            return false;
+        }
+        return super.onInterceptTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.i("zy", "onTouchEvent: " + event.getAction());
+        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+            if (pressX - event.getX() > 100 && trigger) {
+                trigger = false;
+                openMenu();
+            } else if (event.getX() - pressX > 100 && trigger) {
+                trigger = false;
+                closeMenu();
+            }
+            return false;
+        }
+        return super.onTouchEvent(event);
+    }
+
+    private boolean isOpen = true;
+
+    public void openMenu() {
+        if (menu != null) {
+            int width = menu.getWidth();
+            for (int i = 0; i < menuItem.size(); i++) {
+                View child = menuItem.get(i);
+                if (child.getTranslationX() < width) return;//如果菜单已经在打开的状态或正在运动的状态 不播放动画
+                postDelayed(() -> ObjectAnimator.ofFloat(child, "translationX", width, -width / 8f, 0).setDuration(500).start(), i * 50);
+            }
+            isOpen = true;
+        }
+    }
+
+    public void closeMenu() {
+        if (menu != null) {
+            for (int i = 0; i < menuItem.size(); i++) {
+                int width = menu.getWidth();
+                View child = menuItem.get(i);
+                if (child.getTranslationX() > 0) return;//如果菜单已经在关闭的状态或正在运动的状态 不播放动画
+                post(() -> ObjectAnimator.ofFloat(child, "translationX", 0, width).setDuration(500).start());
+            }
+            isOpen = false;
+        }
+    }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setSideMenuResourse(int resId) {
+        menu = LayoutInflater.from(getContext()).inflate(resId, SideMenu.this, false);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         lp.addRule(ALIGN_PARENT_RIGHT);
         addView(menu, lp);
 
@@ -59,61 +128,10 @@ public class SideMenu extends RelativeLayout {
                 View child = menuGroup.getChildAt(i);
                 menuItem.add(child);
                 final int pos = i;
-                child.setOnClickListener(view -> {
-                    if (itemListener != null) itemListener.onClick(view, pos);
-                });
+                if (itemListener != null) {
+                    child.setOnClickListener(view -> itemListener.onClick(view, pos));
+                }
             }
-        }
-    }
-
-    private boolean trigger = false;
-    private float pressX;
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            trigger = true;
-            pressX = event.getX();
-            return true;
-        }
-        if (event.getAction() == MotionEvent.ACTION_MOVE) {
-            if (pressX - event.getX() > 100 && trigger) {
-                trigger = false;
-                openMenu();
-            } else if (event.getX() - pressX > 100 && trigger) {
-                trigger = false;
-                closeMenu();
-            }
-            return true;
-        }
-        return super.onTouchEvent(event);
-    }
-
-    public void openMenu() {
-        if (menu != null) {
-            //if (menu.getTranslationX() == 0) return;
-
-            int width = menu.getWidth();
-            for (int i = 0; i < menuItem.size(); i++) {
-                View child = menuItem.get(i);
-                postDelayed(() -> ObjectAnimator.ofFloat(child, "translationX", -width / 3f, width, 0).setDuration(500).start(), i * 100);
-            }
-        }
-    }
-
-    public void closeMenu() {
-        if (menu != null) {
-            //if (menu.getTranslationX() == 0)
-            for (int i = 0; i < menuItem.size(); i++) {
-                int width = menu.getWidth();
-                View child = menuItem.get(i);
-                post(() -> ObjectAnimator.ofFloat(child, "translationX", 0, width).setDuration(500).start());
-                //postDelayed(() -> ObjectAnimator.ofFloat(child, "translationX", -width / 3f, width, 0).setDuration(500).start(), i * 100);
-            }
-//            post(() -> {
-//                    int width = menu.getWidth();
-//                    ObjectAnimator.ofFloat(menu, "translationX", 0, width).setDuration(500).start();
-//                });
         }
     }
 
@@ -121,6 +139,14 @@ public class SideMenu extends RelativeLayout {
 
     public void setOnClickMenuItemListener(OnClickMenuItemListener listener) {
         itemListener = listener;
+
+        for (int i = 0; i < menuItem.size(); i++) {
+            View child = menuItem.get(i);
+            final int pos = i;
+            if (itemListener != null) {
+                child.setOnClickListener(view -> itemListener.onClick(view, pos));
+            }
+        }
     }
 
     public interface OnClickMenuItemListener {
