@@ -43,8 +43,18 @@ public class WorkAttendanceActivity extends BaseActivity {
         rl_tab2.setOnClickListener(view -> changeTab(TABTWO));
         iv_tab1 = (ImageView) findViewById(R.id.iv_work_attendance_tab1);
         iv_tab2 = (ImageView) findViewById(R.id.iv_work_attendance_tab2);
+        initContain();
+    }
+
+    private void initContain() {
         selected = TABONE;
-        changeTab(selected);
+        tv_title.setText("考勤组管理");
+        iv_tab1.setVisibility(View.VISIBLE);
+        iv_tab2.setVisibility(View.GONE);
+        mFragments[TABONE] = new AttendanceSettingFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.activity_work_attendance_contain, mFragments[TABONE]);
+        transaction.commit();
     }
 
     public void changeTab(int tabNum) {

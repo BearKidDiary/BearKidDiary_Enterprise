@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.CourseAdminActivity;
 import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
+import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 import com.gc.materialdesign.views.Card;
 import com.nineoldandroids.animation.ValueAnimator;
@@ -115,6 +116,7 @@ public class OrganizationFragment extends BaseFragment {
             case R.id.btn_org_kid://学生
                 break;
             case R.id.btn_org_attendence://考勤
+                WorkAttendanceActivity.startActivity(getContext());
                 break;
             case R.id.btn_org_approval://审批
                 break;
