@@ -7,22 +7,22 @@
     android:orientation="vertical">
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_margin="16dp"
         android:background="@color/colorPrimary"
         app:iconDrawable="@drawable/staff_add" />
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_margin="16dp"
         android:background="@color/colorPrimary"
         app:iconDrawable="@drawable/staff_tag" />
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_margin="16dp"
         android:background="@color/colorPrimary"
         app:iconDrawable="@drawable/staff_grade" />

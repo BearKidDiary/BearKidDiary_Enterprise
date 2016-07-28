@@ -15,11 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.ui.activity.CourseActivity;
+import com.bearkiddiary.enterprise.ui.activity.CourseAdminActivity;
 import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 import com.gc.materialdesign.views.Card;
-import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 
 /**
@@ -54,10 +53,21 @@ public class OrganizationFragment extends BaseFragment {
         ll_manager = (LinearLayout) v.findViewById(R.id.ll_organization_manager);
         ll_org = (LinearLayout) v.findViewById(R.id.ll_organization);
 
-        ib_location.setOnClickListener(view -> StaffActivity.startActivity(getContext()));
+        ib_location.setOnClickListener(view -> {
+            //TODO:附近的机构
+        });
 
+        ViewGroup layout;
         //如果是机构管理员，则显示管理员的选项界面
-        vs_manager.inflate();
+        layout = (ViewGroup) vs_manager.inflate();
+        //如果是老师，则显示老师的选项界面
+        //TODO:显示老师的选项界面
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            ViewGroup linearlayout = (ViewGroup) layout.getChildAt(i);
+            for (int j = 0; j < linearlayout.getChildCount(); j++) {
+                linearlayout.getChildAt(j).setOnClickListener(onClickListener);
+            }
+        }
 
         //课程列表
         rv_course.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -93,6 +103,26 @@ public class OrganizationFragment extends BaseFragment {
         iv_down.setOnClickListener(onUpDownListener);
     }
 
+    private View.OnClickListener onClickListener = v -> {
+        switch (v.getId()) {
+            case R.id.btn_org_auth://认证
+                break;
+            case R.id.btn_org_staff://员工
+                StaffActivity.startActivity(getContext());
+                break;
+            case R.id.btn_org_show://风采
+                break;
+            case R.id.btn_org_kid://学生
+                break;
+            case R.id.btn_org_attendence://考勤
+                break;
+            case R.id.btn_org_approval://审批
+                break;
+            default:
+                break;
+        }
+    };
+
     class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapter.OrganizationViewHolder> {
 
         @Override
@@ -103,7 +133,7 @@ public class OrganizationFragment extends BaseFragment {
 
         @Override
         public void onBindViewHolder(OrganizationViewHolder holder, int position) {
-            holder.card_course.setOnClickListener(view -> CourseActivity.startActivity(getContext()));
+            holder.card_course.setOnClickListener(view -> CourseAdminActivity.startActivity(getContext()));
         }
 
         @Override

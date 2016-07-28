@@ -2,17 +2,13 @@ package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -29,7 +25,7 @@ import com.bearkiddiary.enterprise.ui.view.IconButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseActivity extends BaseActivity implements ICourseView {
+public class CourseAdminActivity extends BaseActivity implements ICourseView {
 
     private RecyclerView rv_course;
     private ImageView iv_back;
@@ -42,7 +38,7 @@ public class CourseActivity extends BaseActivity implements ICourseView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course);
+        setContentView(R.layout.activity_course_admin);
         initView();
     }
 
@@ -52,6 +48,7 @@ public class CourseActivity extends BaseActivity implements ICourseView {
 
         //标题栏返回键
         iv_back.setOnClickListener(view -> finish());
+
         //课程对应班级信息的列表 包括任课老师、时间地点、学生名单
         rv_course.setLayoutManager(new LinearLayoutManager(getContext()));
         rv_course.setItemAnimator(new DefaultItemAnimator());
@@ -60,7 +57,7 @@ public class CourseActivity extends BaseActivity implements ICourseView {
     }
 
     public static void startActivity(Context context) {
-        context.startActivity(new Intent(context, CourseActivity.class));
+        context.startActivity(new Intent(context, CourseAdminActivity.class));
     }
 
     @Override
@@ -119,7 +116,7 @@ public class CourseActivity extends BaseActivity implements ICourseView {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             if (viewType == HEAD) {
-                View view = LayoutInflater.from(getContext()).inflate(R.layout.item_course_head, parent, false);
+                View view = LayoutInflater.from(getContext()).inflate(R.layout.item_course_admin_head, parent, false);
                 return new HeadViewHolder(view);
             } else {
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.item_kid, parent, false);

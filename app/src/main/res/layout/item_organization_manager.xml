@@ -13,6 +13,7 @@
         android:paddingTop="16dp">
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_staff"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
@@ -40,6 +41,7 @@
         </com.gc.materialdesign.views.LayoutRipple>
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_approval"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
@@ -67,6 +69,7 @@
         </com.gc.materialdesign.views.LayoutRipple>
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_attendence"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
@@ -101,6 +104,7 @@
         android:paddingRight="16dp">
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_auth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
@@ -128,6 +132,7 @@
         </com.gc.materialdesign.views.LayoutRipple>
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_show"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
@@ -155,6 +160,7 @@
         </com.gc.materialdesign.views.LayoutRipple>
 
         <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_kid"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="1dp"
