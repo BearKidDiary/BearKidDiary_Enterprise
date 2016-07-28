@@ -1,6 +1,7 @@
 package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,11 +10,14 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.ui.view.CircleImageview;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 import com.bearkiddiary.enterprise.ui.view.SideMenu;
 
@@ -60,7 +64,6 @@ public class CourseTeacherActivity extends BaseActivity {
         rv_course.setLayoutManager(manager);
         rv_course.setAdapter(mAdapter = new CourseAdapter());
         rv_course.setItemAnimator(new DefaultItemAnimator());
-        rv_course.addItemDecoration(new Divider(getContext()));
 
         //侧滑菜单的资源设置
         sideMenu.setSideMenuResourse(R.layout.item_course_side_menu);
@@ -69,13 +72,23 @@ public class CourseTeacherActivity extends BaseActivity {
         });
     }
 
+    public static void startActivity(Context context) {
+        context.startActivity(new Intent(context, CourseTeacherActivity.class));
+    }
+
     class CourseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public static final int HEAD = 1;
         public static final int ITEM = 2;
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return null;
+            if (viewType == HEAD) {
+                View view = LayoutInflater.from(getContext()).inflate(R.layout.item_organization_dynamic, parent, false);
+                return new HeadViewHolder(view);
+            } else {
+                View view = LayoutInflater.from(getContext()).inflate(R.layout.item_course_kid, parent, false);
+                return new KidViewHolder(view);
+            }
         }
 
         @Override
@@ -91,46 +104,26 @@ public class CourseTeacherActivity extends BaseActivity {
 
         @Override
         public int getItemCount() {
-            return 0;
+            return 30;
         }
 
-        class HeadViewHolder extends RecyclerView.ViewHolder{
+        class HeadViewHolder extends RecyclerView.ViewHolder {
+            private TextView tv_dynamic;
 
             public HeadViewHolder(View v) {
                 super(v);
+                tv_dynamic = (TextView) v.findViewById(R.id.tv_course_dynamic);
             }
         }
 
-        class KidViewHolder extends RecyclerView.ViewHolder{
+        class KidViewHolder extends RecyclerView.ViewHolder {
+            private CircleImageview civ_avatar;
+            private TextView tv_name;
+
             public KidViewHolder(View v) {
                 super(v);
-            }
-        }
-    }
-
-    static class Divider extends RecyclerView.ItemDecoration {
-        Paint paint = new Paint();
-
-        public Divider(Context context) {
-            paint.setColor(Color.DKGRAY);
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        }
-
-        @Override
-        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-            int cnt = parent.getChildCount();
-
-            final int left = parent.getPaddingLeft();
-            final int right = parent.getWidth() - parent.getPaddingRight();
-
-            for (int i = 0; i < cnt; i++) {
-                View child = parent.getChildAt(i);
-                int pos = parent.getChildAdapterPosition(child);
-                if (pos != 0) {
-                    int top = child.getBottom();
-                    int bottom = top + 1;
-                    c.drawRect(left, top, right, bottom, paint);
-                }
+                civ_avatar = (CircleImageview) v.findViewById(R.id.civ_kid_avatar);
+                tv_name = (TextView) v.findViewById(R.id.tv_kid_name);
             }
         }
     }
