@@ -61,6 +61,17 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
         editSpecialtiesTv.setOnClickListener(this);
         addWorkExp.setOnClickListener(this);
         addEduExp.setOnClickListener(this);
+
+        setName("王大锤");
+        setAddress("广东广州");
+        setGender(R.drawable.male);
+        setMajor("数学、英语");
+        setPhoneNum("15603000000");
+        setQQ("13245");
+        setEmail("75663322@163.com");
+        showWorkExperience("2016-02", "2016-07", "安卓开发工程师", "中国移动", "主要负责哈哈哈哈");
+        showWorkExperience("2016-02", "2016-07", "数学老师", "春田花花幼稚园", "主要负责哈哈哈哈");
+        showEduExperience("2016-02", "2016-08", "计算机专业", "华南师范大学");
     }
 
     @Override
@@ -88,8 +99,10 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
                         specialtiesTv.getText().toString());
                 break;
             case R.id.tv_resume_add_work_exp:
+                ResumeEditJobActivity.startActivity(ResumeActivity.this);
                 break;
             case R.id.tv_resume_add_edu_exp:
+                ResumeEditEduActivity.startActivity(ResumeActivity.this);
                 break;
             default:
                 break;
@@ -145,9 +158,8 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
         ((TextView)expView.findViewById(R.id.item_resume_tv_1)).setText(job);
         ((TextView)expView.findViewById(R.id.item_resume_tv_2)).setText(company);
         ((TextView)expView.findViewById(R.id.item_resume_tv_3)).setText(desc);
-        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view -> {
-
-        });
+        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view ->
+                ResumeEditJobActivity.startActivity(ResumeActivity.this, startDate, endDate, job, company, desc));
         expView.findViewById(R.id.item_resume_delete).setOnClickListener(view -> {
 
         });
@@ -162,9 +174,8 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
         ((TextView)expView.findViewById(R.id.item_resume_end_date)).setText(endDate);
         ((TextView)expView.findViewById(R.id.item_resume_tv_1)).setText(major);
         ((TextView)expView.findViewById(R.id.item_resume_tv_2)).setText(school);
-        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view -> {
-
-        });
+        expView.findViewById(R.id.item_resume_edit).setOnClickListener(view ->
+                ResumeEditEduActivity.startActivity(ResumeActivity.this, startDate, endDate, major, school, ""));
         expView.findViewById(R.id.item_resume_delete).setOnClickListener(view -> {
 
         });

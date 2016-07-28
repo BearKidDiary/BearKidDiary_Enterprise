@@ -8,6 +8,7 @@
     <string name="individual_organization">机构管理</string>
     <string name="individual_customer_service">客服中心</string>
     <string name="individual_settings">设置</string>
+    <string name="individual_scan">扫一扫</string>
     <string name="individual_qr_code">二维码</string>
 
     <string name="personal_info_title">个人信息</string>
@@ -47,8 +48,32 @@
     <string name="resume_edit_spec">编辑我的专长</string>
     <string name="hint_spec">编辑你的专长</string>
     <string name="resume_spec">专长</string>
+    <string name="resume_edit_work_exp">编辑工作经历</string>
+    <string name="resume_edit_company">公司名称</string>
+    <string name="resume_job_time">任职时间</string>
+    <string name="resume_job_name">职位名称</string>
+    <string name="resume_description">工作描述</string>
+    <string name="resume_edit_edu_exp">编辑教育经历</string>
+    <string name="resume_edu_name">学校名称</string>
+    <string name="resume_edu_time">就读时间</string>
+    <string name="resume_edu_major">专业名称</string>
+    <string name="resume_edu_major_desc">专业描述</string>
 
     <string name="male">男</string>
     <string name="female">女</string>
+
+    <string name="work_attendance_tab1">设置</string>
+    <string name="work_attendance_tab2">统计</string>
+    <string name="attendance_add">新增考勤组</string>
+    <string name="attendance_start_time">打卡起始时间</string>
+    <string name="attendance_end_time">打卡结束时间</string>
+    <string name="attendance_work_day">工作日设置</string>
+    <string name="work_day_1">一</string>
+    <string name="work_day_2">二</string>
+    <string name="work_day_3">三</string>
+    <string name="work_day_4">四</string>
+    <string name="work_day_5">五</string>
+    <string name="work_day_6">六</string>
+    <string name="work_day_7">日</string>
 
 </resources>

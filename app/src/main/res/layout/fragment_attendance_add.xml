@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <TextView
+            style="@style/style_text_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attendance_start_time"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:layout_margin="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/drawable_edit_normal"
+            android:text="9:00"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <TextView
+            style="@style/style_text_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/attendance_end_time"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:layout_margin="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/drawable_edit_normal"
+            android:text="18:00"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/style_text_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:text="@string/attendance_work_day" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_1"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_2"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_3"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_4"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_5"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_6"/>
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="16dp"
+            android:text="@string/work_day_7"/>
+    </LinearLayout>
+    <com.gc.materialdesign.views.CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <com.gc.materialdesign.views.ButtonFloat
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="end"/>
+
+</LinearLayout>
