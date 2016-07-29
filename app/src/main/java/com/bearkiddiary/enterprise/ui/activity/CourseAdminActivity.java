@@ -2,8 +2,6 @@ package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +18,7 @@ import com.bearkiddiary.enterprise.model.bean.Kid;
 import com.bearkiddiary.enterprise.model.bean.Teacher;
 import com.bearkiddiary.enterprise.ui.activity.iactivity.ICourseView;
 import com.bearkiddiary.enterprise.ui.view.CircleImageview;
+import com.bearkiddiary.enterprise.ui.view.Divider;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 
 import java.util.ArrayList;
@@ -164,33 +163,6 @@ public class CourseAdminActivity extends BaseActivity implements ICourseView {
                 super(v);
                 tv_name = (TextView) v.findViewById(R.id.tv_kid_name);
                 civ_avatar = (CircleImageview) v.findViewById(R.id.civ_kid_avatar);
-            }
-        }
-    }
-
-    static class Divider extends RecyclerView.ItemDecoration {
-        Paint paint = new Paint();
-
-        public Divider(Context context) {
-            paint.setColor(context.getResources().getColor(R.color.bg_gray));
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        }
-
-        @Override
-        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-            int cnt = parent.getChildCount();
-
-            final int left = parent.getPaddingLeft();
-            final int right = parent.getWidth() - parent.getPaddingRight();
-
-            for (int i = 0; i < cnt; i++) {
-                View child = parent.getChildAt(i);
-                int pos = parent.getChildAdapterPosition(child);
-                if (pos != 0) {
-                    int top = child.getBottom();
-                    int bottom = top + 3;
-                    c.drawRect(left, top, right, bottom, paint);
-                }
             }
         }
     }

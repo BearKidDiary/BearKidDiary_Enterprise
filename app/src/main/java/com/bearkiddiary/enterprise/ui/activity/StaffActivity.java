@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.ui.view.Divider;
 import com.bearkiddiary.enterprise.ui.view.IconButton;
 import com.bearkiddiary.enterprise.ui.view.SideMenu;
 
@@ -57,7 +58,19 @@ public class StaffActivity extends BaseActivity {
 
         //添加侧滑菜单的资源文件
         sideMenu.setSideMenuResourse(R.layout.item_staff_side_menu);
-        sideMenu.setOnClickMenuItemListener((v, postion) -> showToast(postion + ""));
+        sideMenu.setOnClickMenuItemListener((v, postion) -> {
+            switch (v.getId()) {
+                case R.id.btn_staff_add://添加员工
+                    break;
+                case R.id.btn_staff_grade://等级评价
+                    break;
+                case R.id.btn_staff_tag://分组管理
+                    TagActivity.startActivity(getContext());
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 
     public static final void startActivity(Context context) {
@@ -105,33 +118,6 @@ public class StaffActivity extends BaseActivity {
         class StaffViewHolder extends RecyclerView.ViewHolder {
             public StaffViewHolder(View v) {
                 super(v);
-            }
-        }
-    }
-
-    static class Divider extends RecyclerView.ItemDecoration {
-        Paint paint = new Paint();
-
-        public Divider(Context context) {
-            paint.setColor(Color.DKGRAY);
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        }
-
-        @Override
-        public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-            int cnt = parent.getChildCount();
-
-            final int left = parent.getPaddingLeft();
-            final int right = parent.getWidth() - parent.getPaddingRight();
-
-            for (int i = 0; i < cnt; i++) {
-                View child = parent.getChildAt(i);
-                int pos = parent.getChildAdapterPosition(child);
-                if (pos != 0) {
-                    int top = child.getBottom();
-                    int bottom = top + 1;
-                    c.drawRect(left, top, right, bottom, paint);
-                }
             }
         }
     }

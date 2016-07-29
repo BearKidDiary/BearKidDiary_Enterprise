@@ -119,6 +119,8 @@ public class OrganizationFragment extends BaseFragment {
                 break;
             case R.id.btn_org_approval://审批
                 break;
+            case R.id.btn_org_contact://联系人
+                break;
             default:
                 break;
         }
