@@ -43,16 +43,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:id="@+id/ll_organization_manager"
             android:layout_width="match_parent"
-            android:layout_height="104dp">
-
+            android:layout_height="104dp"
+            android:orientation="vertical">
             <ViewStub
-                android:id="@+id/vs_organization_manager"
+                android:id="@+id/vs_organization_manager_admin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout="@layout/item_organization_manager" />
+                android:layout="@layout/item_organization_manager_admin" />
+
+            <ViewStub
+                android:id="@+id/vs_organization_manager_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/item_organization_manager_teacher" />
         </LinearLayout>
 
         <ImageView

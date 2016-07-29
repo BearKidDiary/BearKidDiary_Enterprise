@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.ui.activity.CourseAdminActivity;
 import com.bearkiddiary.enterprise.ui.activity.CourseTeacherActivity;
 import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
 import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
@@ -32,7 +31,7 @@ public class OrganizationFragment extends BaseFragment {
     private IconButton ib_location;
     private ImageView iv_up, iv_down;
     private RecyclerView rv_course;
-    private ViewStub vs_manager;
+    private ViewStub vs_manager_admin, vs_manager_teacher;
     private LinearLayout ll_manager, ll_org;
     private OrganizationAdapter mAdapter;
     private int curHeight;//控制上下拉的高度
@@ -46,7 +45,8 @@ public class OrganizationFragment extends BaseFragment {
     }
 
     private final void initView(View v) {
-        vs_manager = (ViewStub) v.findViewById(R.id.vs_organization_manager);
+        vs_manager_admin = (ViewStub) v.findViewById(R.id.vs_organization_manager_admin);
+        vs_manager_teacher = (ViewStub) v.findViewById(R.id.vs_organization_manager_teacher);
         rv_course = (RecyclerView) v.findViewById(R.id.rv_organization_course);
         ib_location = (IconButton) v.findViewById(R.id.ib_location);
         iv_up = (ImageView) v.findViewById(R.id.iv_organization_up);
@@ -61,9 +61,10 @@ public class OrganizationFragment extends BaseFragment {
 
         ViewGroup layout;
         //如果是机构管理员，则显示管理员的选项界面
-        layout = (ViewGroup) vs_manager.inflate();
+        layout = (ViewGroup) vs_manager_admin.inflate();
         //如果是老师，则显示老师的选项界面
-        //TODO:显示老师的选项界面
+        //layout = (ViewGroup) vs_manager_teacher.inflate();
+
         for (int i = 0; i < layout.getChildCount(); i++) {
             ViewGroup linearlayout = (ViewGroup) layout.getChildAt(i);
             for (int j = 0; j < linearlayout.getChildCount(); j++) {
@@ -107,6 +108,8 @@ public class OrganizationFragment extends BaseFragment {
 
     private View.OnClickListener onClickListener = v -> {
         switch (v.getId()) {
+            case R.id.btn_org_record://记录
+                break;
             case R.id.btn_org_auth://认证
                 break;
             case R.id.btn_org_staff://员工
@@ -122,6 +125,10 @@ public class OrganizationFragment extends BaseFragment {
             case R.id.btn_org_approval://审批
                 break;
             case R.id.btn_org_contact://联系人
+                break;
+            case R.id.btn_org_request://申请
+                break;
+            case R.id.btn_org_sign://签到
                 break;
             default:
                 break;

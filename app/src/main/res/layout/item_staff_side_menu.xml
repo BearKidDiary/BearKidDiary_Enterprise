@@ -6,27 +6,70 @@
     android:gravity="center|right"
     android:orientation="vertical">
 
-    <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/btn_staff_add"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@color/colorPrimary"
-        app:iconDrawable="@drawable/staff_add" />
+        android:orientation="vertical">
 
-    <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/btn_staff_tag"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        android:background="@color/colorPrimary"
-        app:iconDrawable="@drawable/staff_tag" />
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_staff_add"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/colorPrimary"
+            app:iconDrawable="@drawable/staff_add" />
 
-    <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/btn_staff_grade"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="添加员工"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@color/colorPrimary"
-        app:iconDrawable="@drawable/staff_grade" />
+        android:orientation="vertical">
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_staff_tag"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/colorPrimary"
+            app:iconDrawable="@drawable/staff_tag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="分组管理"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_staff_grade"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/colorPrimary"
+            app:iconDrawable="@drawable/staff_grade" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="绩效评定"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+    </LinearLayout>
 </LinearLayout>

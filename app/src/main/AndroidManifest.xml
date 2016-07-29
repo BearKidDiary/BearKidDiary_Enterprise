@@ -38,6 +38,7 @@
         <activity
             android:name=".ui.activity.TagEditActivity"
             android:windowSoftInputMode="stateHidden|adjustNothing" />
+        <activity android:name=".ui.activity.GradeTeacherActivity"></activity>
     </application>
 
 </manifest>

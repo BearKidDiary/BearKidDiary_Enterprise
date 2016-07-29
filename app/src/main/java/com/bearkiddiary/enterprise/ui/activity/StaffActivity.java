@@ -63,6 +63,7 @@ public class StaffActivity extends BaseActivity {
                 case R.id.btn_staff_add://添加员工
                     break;
                 case R.id.btn_staff_grade://等级评价
+                    GradeTeacherActivity.startActivity(getContext());
                     break;
                 case R.id.btn_staff_tag://分组管理
                     TagActivity.startActivity(getContext());

@@ -9,14 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp">
+        android:paddingRight="16dp">
 
         <com.gc.materialdesign.views.LayoutRipple
-            android:id="@+id/btn_org_staff"
+            android:id="@+id/btn_org_record"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -28,13 +27,13 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/manager_stuff" />
+                    android:src="@drawable/manager_record" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="员工"
+                    android:text="记录"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -44,7 +43,7 @@
             android:id="@+id/btn_org_approval"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -72,7 +71,7 @@
             android:id="@+id/btn_org_attendence"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -104,10 +103,10 @@
         android:paddingRight="16dp">
 
         <com.gc.materialdesign.views.LayoutRipple
-            android:id="@+id/btn_org_auth"
+            android:id="@+id/btn_org_staff"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -119,13 +118,13 @@
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:src="@drawable/manager_auth" />
+                    android:src="@drawable/manager_stuff" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="认证"
+                    android:text="员工"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -135,7 +134,7 @@
             android:id="@+id/btn_org_show"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -163,7 +162,7 @@
             android:id="@+id/btn_org_kid"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -198,7 +197,7 @@
             android:id="@+id/btn_org_contact"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="1dp"
+            android:layout_margin="8dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -221,9 +220,38 @@
             </LinearLayout>
         </com.gc.materialdesign.views.LayoutRipple>
 
+        <com.gc.materialdesign.views.LayoutRipple
+            android:id="@+id/btn_org_auth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/manager_auth" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="认证"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </com.gc.materialdesign.views.LayoutRipple>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2" />
+            android:layout_margin="8dp"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
