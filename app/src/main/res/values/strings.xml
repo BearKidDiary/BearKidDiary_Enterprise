@@ -75,5 +75,6 @@
     <string name="work_day_5">五</string>
     <string name="work_day_6">六</string>
     <string name="work_day_7">日</string>
+    <string name="until">至</string>
 
 </resources>
