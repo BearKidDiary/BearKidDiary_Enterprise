@@ -7,7 +7,10 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.DatePicker;
+
+import com.bearkiddiary.enterprise.R;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
@@ -43,13 +46,13 @@ public class DateTimePickerUtil {
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 context,
+                R.style.AppTheme,
                 (view, year, monthOfYear, dayOfMonth) ->
                         onMonthSetListener.onMonthSet(getFormatDate(year, monthOfYear)),
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
         DatePicker datePicker = datePickerDialog.getDatePicker();
-        //((ViewGroup) ((ViewGroup) datePickerDialog.getDatePicker().getChildAt(0)).getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             int daySpinnerId = Resources.getSystem().getIdentifier("day", "id", "android");
@@ -61,6 +64,8 @@ public class DateTimePickerUtil {
                     daySpinner.setVisibility(View.GONE);
                 }
             }
+        } else {
+            ((ViewGroup) ((ViewGroup) datePickerDialog.getDatePicker().getChildAt(0)).getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
         }
 
         datePickerDialog.show();
