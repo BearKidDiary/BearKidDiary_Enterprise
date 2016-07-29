@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
 public class ResumeEditEduActivity extends BaseActivity {
     private static final int EDITEXP = 0;//编辑操作
@@ -21,6 +23,9 @@ public class ResumeEditEduActivity extends BaseActivity {
     protected EditText et_major;
     protected EditText et_desc;
 
+    protected TextView tv_start_date;
+    protected TextView tv_end_date;
+
     protected int opType;//判断是“新增”还是“编辑”操作
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,19 @@ public class ResumeEditEduActivity extends BaseActivity {
     }
 
     private void initView() {
-        findViewById(R.id.iv_title_back_resume_edit_edu).setOnClickListener(view -> finish());
+        this.findViewById(R.id.iv_title_back_resume_edit_edu).setOnClickListener(view -> finish());
+
+        tv_start_date = (TextView) this.findViewById(R.id.tv_resume_edu_start_date);
+        tv_end_date = (TextView) this.findViewById(R.id.tv_resume_edu_end_date);
+
+        tv_start_date.setOnClickListener(view ->
+                DateTimePickerUtil.showMonthPicker(
+                        ResumeEditEduActivity.this,
+                        monthOfYear -> tv_start_date.setText(monthOfYear)));
+        tv_end_date.setOnClickListener(view ->
+                DateTimePickerUtil.showMonthPicker(
+                        ResumeEditEduActivity.this,
+                        monthOfYear -> tv_end_date.setText(monthOfYear)));
 
         et_school = (EditText) findViewById(R.id.et_resume_school);
         et_major = (EditText) findViewById(R.id.et_resume_edu_major);

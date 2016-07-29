@@ -73,20 +73,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:padding="8dp">
 
                 <TextView
                     style="@style/style_text_hint"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
                     android:text="@string/resume_edu_time" />
 
-                <EditText
-                    android:layout_width="match_parent"
+
+                <TextView
+                    android:id="@+id/tv_resume_edu_start_date"
+                    style="@style/style_text_black"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:clickable="true"
+                    android:background="@drawable/drawable_edit_normal"
+                    android:gravity="center"
+                    android:text="2016-07"/>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/bg_white"
-                    android:padding="8dp" />
+                    android:layout_margin="8dp"
+                    android:text="@string/until"/>
+                <TextView
+                    android:id="@+id/tv_resume_edu_end_date"
+                    style="@style/style_text_black"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:clickable="true"
+                    android:background="@drawable/drawable_edit_normal"
+                    android:gravity="center"
+                    android:text="2017-01"/>
             </LinearLayout>
 
             <View
