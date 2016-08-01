@@ -90,9 +90,6 @@ public class SideMenu extends RelativeLayout {
 
     public void openMenu() {
         if (menu != null) {
-            //背景变黑
-            ((Activity) getContext()).findViewById(android.R.id.content).setBackgroundColor(0x33000000);
-
             int width = menu.getWidth();
             for (int i = 0; i < menuItem.size(); i++) {
                 View child = menuItem.get(i);
@@ -105,9 +102,6 @@ public class SideMenu extends RelativeLayout {
 
     public void closeMenu() {
         if (menu != null) {
-            //背景透明
-            ((Activity) getContext()).findViewById(android.R.id.content).setBackgroundColor(0x00000000);
-
             for (int i = 0; i < menuItem.size(); i++) {
                 int width = menu.getWidth();
                 View child = menuItem.get(i);
