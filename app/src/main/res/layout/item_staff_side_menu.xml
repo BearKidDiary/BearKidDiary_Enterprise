@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="添加员工"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="分组管理"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="绩效评定"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

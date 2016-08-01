@@ -38,7 +38,9 @@
         <activity
             android:name=".ui.activity.TagEditActivity"
             android:windowSoftInputMode="stateHidden|adjustNothing" />
-        <activity android:name=".ui.activity.GradeTeacherActivity"></activity>
+        <activity android:name=".ui.activity.GradeTeacherActivity" />
+        <activity android:name=".ui.activity.RollCallActivity" />
+        <activity android:name=".ui.activity.GradeKidActivity"></activity>
     </application>
 
 </manifest>

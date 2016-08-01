@@ -2,10 +2,6 @@ package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -68,7 +64,18 @@ public class CourseTeacherActivity extends BaseActivity {
         //侧滑菜单的资源设置
         sideMenu.setSideMenuResourse(R.layout.item_course_side_menu);
         sideMenu.setOnClickMenuItemListener((v, postion) -> {
-
+            switch (v.getId()) {
+                case R.id.btn_course_mass://群发
+                    break;
+                case R.id.btn_course_grade://等级评价
+                    GradeKidActivity.startActivity(getContext());
+                    break;
+                case R.id.btn_course_add://添加学生
+                    break;
+                case R.id.btn_course_roll_call://点名
+                    RollCallActivity.startActivity(getContext());
+                    break;
+            }
         });
     }
 

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.RelativeLayout;
 
 import com.bearkiddiary.enterprise.R;
@@ -90,10 +91,11 @@ public class SideMenu extends RelativeLayout {
 
     public void openMenu() {
         if (menu != null) {
-            int width = menu.getWidth();
+            final int width = (int) (menu.getWidth() * 0.5f);
             for (int i = 0; i < menuItem.size(); i++) {
                 View child = menuItem.get(i);
                 if (child.getTranslationX() < width) return;//如果菜单已经在打开的状态或正在运动的状态 不播放动画
+                menu.setBackgroundColor(0x5f000000);
                 postDelayed(() -> ObjectAnimator.ofFloat(child, "translationX", width, -width / 8f, 0).setDuration(500).start(), i * 50);
             }
             isOpen = true;
@@ -102,10 +104,11 @@ public class SideMenu extends RelativeLayout {
 
     public void closeMenu() {
         if (menu != null) {
+            final int width = (int) (menu.getWidth() * 0.5f);
             for (int i = 0; i < menuItem.size(); i++) {
-                int width = menu.getWidth();
                 View child = menuItem.get(i);
                 if (child.getTranslationX() > 0) return;//如果菜单已经在关闭的状态或正在运动的状态 不播放动画
+                menu.setBackgroundColor(0x00000000);
                 post(() -> ObjectAnimator.ofFloat(child, "translationX", 0, width).setDuration(500).start());
             }
             isOpen = false;
@@ -117,6 +120,8 @@ public class SideMenu extends RelativeLayout {
     }
 
     public void setSideMenuResourse(int resId) {
+        if (menu != null) return;
+
         menu = LayoutInflater.from(getContext()).inflate(resId, SideMenu.this, false);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         lp.addRule(ALIGN_PARENT_RIGHT);
@@ -135,6 +140,16 @@ public class SideMenu extends RelativeLayout {
                 }
             }
         }
+        menu.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int width = menu.getWidth();
+                for (View child : menuItem) {
+                    child.setTranslationX(width);
+                }
+                menu.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+            }
+        });
     }
 
     private OnClickMenuItemListener itemListener;
@@ -146,7 +161,9 @@ public class SideMenu extends RelativeLayout {
             View child = menuItem.get(i);
             final int pos = i;
             if (itemListener != null) {
-                child.setOnClickListener(view -> itemListener.onClick(view, pos));
+                View button = ((ViewGroup) child).getChildAt(0);
+                button.setOnClickListener(view -> itemListener.onClick(view, pos));
+                //child.setOnClickListener(view -> itemListener.onClick(view, pos));
             }
         }
     }

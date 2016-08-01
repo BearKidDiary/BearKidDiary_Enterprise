@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_roll_call"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="点名"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -34,6 +35,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_mass"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -44,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="群发"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -55,6 +57,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_add"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -65,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="添加学生"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -76,6 +79,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_grade"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -86,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="评分"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/text_white"
             android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
