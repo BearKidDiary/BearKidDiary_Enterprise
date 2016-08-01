@@ -35,10 +35,11 @@
         android:layout_marginRight="16dp"
         android:background="@color/bg_gray" />
 
-    <com.bearkiddiary.enterprise.ui.view.RefreshRecyclerView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_attendance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"/>
 
 </LinearLayout>

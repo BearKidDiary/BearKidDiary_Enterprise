@@ -2,7 +2,7 @@ package com.bearkiddiary.enterprise.ui.fragment.ifragment;
 
 
 /**
- * Created by admin on 2016/7/28.
+ * Created by YarenChoi on 2016/7/28.
  *
  */
 public interface IIndividualFragment extends IBaseFragment {

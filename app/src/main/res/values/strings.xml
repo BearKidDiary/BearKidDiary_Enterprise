@@ -76,5 +76,14 @@
     <string name="work_day_6">六</string>
     <string name="work_day_7">日</string>
     <string name="until">至</string>
+    <string name="attendance_count_normal">正常打卡</string>
+    <string name="attendance_count_absence">未打卡</string>
+    <string name="attendance_count_leave">请假</string>
+    <string name="attendance_count_late">迟到</string>
+    <string name="attendance_count_absenteeism">旷工</string>
+
+    <string name="examination_tab1">待我审批</string>
+    <string name="examination_tab2">已审批</string>
+    <string name="examination">审批</string>
 
 </resources>

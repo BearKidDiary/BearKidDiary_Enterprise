@@ -13,7 +13,7 @@ import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
 /**
- * Created by yarenChoi on 2016/7/28.
+ * Created by YarenChoi on 2016/7/28.
  * 添加考勤组界面
  */
 public class AttendanceAddFragment extends BaseFragment {
@@ -34,11 +34,9 @@ public class AttendanceAddFragment extends BaseFragment {
         tv_start_time = (TextView) view.findViewById(R.id.tv_attendance_add_start);
         tv_end_time = (TextView) view.findViewById(R.id.tv_attendance_add_end);
         tv_start_time.setOnClickListener(v ->
-                DateTimePickerUtil.showTimePicker(mContext, (view1, hourOfDay, minute) ->
-                        tv_start_time.setText(DateTimePickerUtil.getFormatTime(hourOfDay, minute))));
+                DateTimePickerUtil.showTimePicker(mContext, time -> tv_start_time.setText(time)));
         tv_end_time.setOnClickListener(v ->
-                DateTimePickerUtil.showTimePicker(mContext, (view1, hourOfDay, minute) ->
-                        tv_end_time.setText(DateTimePickerUtil.getFormatTime(hourOfDay, minute))));
+                DateTimePickerUtil.showTimePicker(mContext, time -> tv_end_time.setText(time)));
     }
 
     private class WeekdayHolder {

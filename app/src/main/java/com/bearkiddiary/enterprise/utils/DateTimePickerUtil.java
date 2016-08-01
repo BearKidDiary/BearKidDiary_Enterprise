@@ -7,16 +7,16 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.DatePicker;
 
 import com.bearkiddiary.enterprise.R;
 
 import java.text.DecimalFormat;
 import java.util.Calendar;
+import java.lang.reflect.Field;
 
 /**
- * Created by yarenChoi on 2016/7/29.
+ * Created by YarenChoi on 2016/7/29.
  * 日期选择器、时间选择器工具类
  *
  */
@@ -54,7 +54,11 @@ public class DateTimePickerUtil {
                 calendar.get(Calendar.DAY_OF_MONTH));
         DatePicker datePicker = datePickerDialog.getDatePicker();
 
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            datePicker.setCalendarViewShown(false);
+            datePicker.setSpinnersShown(true);
             int daySpinnerId = Resources.getSystem().getIdentifier("day", "id", "android");
             if (daySpinnerId != 0) {
                 Log.e(TAG, "daySpinnerId != 0");
@@ -65,10 +69,31 @@ public class DateTimePickerUtil {
                 }
             }
         } else {
-            ((ViewGroup) ((ViewGroup) datePickerDialog.getDatePicker().getChildAt(0)).getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
+            hidDay(datePicker);
+            //((ViewGroup) ((ViewGroup) datePickerDialog.getDatePicker().getChildAt(0)).getChildAt(0)).getChildAt(2).setVisibility(View.GONE);
         }
 
+
+
         datePickerDialog.show();
+    }
+
+    public static void hidDay (DatePicker mDatePicker){
+        Field[] datePickerfFields = mDatePicker.getClass().getDeclaredFields();
+        for (Field datePickerField : datePickerfFields) {
+            if ("mDaySpinner".equals(datePickerField.getName())) {
+                Log.e(TAG, "mDaySpinner != null");
+                datePickerField.setAccessible(true);
+                Object dayPicker = new Object();
+                try {
+                    dayPicker = datePickerField.get(mDatePicker);
+                } catch (IllegalAccessException | IllegalArgumentException e) {
+                    e.printStackTrace();
+                }
+                // datePicker.getCalendarView().setVisibility(View.GONE);
+                ((View) dayPicker).setVisibility(View.GONE);
+            }
+        }
     }
 
     /**
@@ -76,11 +101,12 @@ public class DateTimePickerUtil {
      * @param context The context the dialog is to run in.
      * @param onTimeSetListener How the parent is notified that the time is set.
      */
-    public static void showTimePicker(Context context, TimePickerDialog.OnTimeSetListener onTimeSetListener) {
+    public static void showTimePicker(Context context, OnTimeSetListener onTimeSetListener) {
         Calendar calendar = Calendar.getInstance();
         TimePickerDialog timePickerDialog = new TimePickerDialog(
                 context,
-                onTimeSetListener,
+                (view, hourOfDay, minute) ->
+                        onTimeSetListener.onTimeSet(getFormatTime(hourOfDay, minute)),
                 calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE),
                 false);
