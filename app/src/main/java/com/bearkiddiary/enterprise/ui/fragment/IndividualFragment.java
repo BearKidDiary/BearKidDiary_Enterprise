@@ -56,27 +56,29 @@ public class IndividualFragment extends BaseFragment implements IIndividualFragm
         rl_customer_service.setOnClickListener(this);
         rl_settings.setOnClickListener(this);
 
+        setName("王大锤");
+        setPhoneNum("15615611561");
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.ll_individual_info:
+            case R.id.ll_individual_info://个人信息
                 PersonalInfoActivity.startActivity(mContext);
                 break;
-            case R.id.rl_individual_resume:
+            case R.id.rl_individual_resume://个人简历
                 ResumeActivity.startActivity(mContext);
                 break;
-            case R.id.rl_individual_organization:
+            case R.id.rl_individual_organization://机构管理
                 OrganizationMgmtActivity.startActivity(mContext);
                 break;
-            case R.id.rl_individual_scan:
+            case R.id.rl_individual_scan://扫一扫
                 break;
-            case R.id.rl_individual_qr_code:
+            case R.id.rl_individual_qr_code://二维码
                 break;
-            case R.id.rl_individual_customer_service:
+            case R.id.rl_individual_customer_service://客服中心
                 break;
-            case R.id.rl_individual_settings:
+            case R.id.rl_individual_settings://设置
                 break;
             default:
                 break;

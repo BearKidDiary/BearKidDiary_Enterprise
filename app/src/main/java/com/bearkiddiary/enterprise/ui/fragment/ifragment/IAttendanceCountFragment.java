@@ -6,7 +6,5 @@ package com.bearkiddiary.enterprise.ui.fragment.ifragment;
  *
  */
 public interface IAttendanceCountFragment extends IBaseFragment {
-    void showCalendar();
-
     void setCount(int normal, int absence, int leave, int late, int absenteeism);
 }

@@ -30,7 +30,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/selector_translucent" />
 
         <RelativeLayout
             android:id="@+id/rl_calendar_plus"
@@ -76,8 +78,7 @@
                     style="@style/style_text_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="1" />
+                    android:layout_marginLeft="16dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -97,8 +98,7 @@
                     style="@style/style_text_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="1" />
+                    android:layout_marginLeft="16dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -124,8 +124,7 @@
                     style="@style/style_text_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="1" />
+                    android:layout_marginLeft="16dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,8 +144,7 @@
                     style="@style/style_text_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="1" />
+                    android:layout_marginLeft="16dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -172,8 +170,7 @@
                     style="@style/style_text_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="1" />
+                    android:layout_marginLeft="16dp" />
             </LinearLayout>
 
             <TextView

@@ -8,9 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
@@ -61,20 +58,16 @@ public class AttendanceSettingFragment extends BaseFragment {
 //            holder.root.setOnClickListener(v -> {
 //                //v.getTag()
 //            });
-//            holder.name.setText(orgName.get(position));
-//            holder.job.setText(orgJob.get(position));
         }
 
         @Override
         public int getItemCount() {
-            return attendanceGroups.size();
+            return 5;
         }
 
         class MyViewHolder extends RecyclerView.ViewHolder {
 //            LinearLayout root;
 //            ImageView avatar;
-//            TextView name;
-//            TextView job;
 
             public MyViewHolder(View view) {
                 super(view);

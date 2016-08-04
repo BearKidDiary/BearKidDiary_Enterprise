@@ -85,5 +85,11 @@
     <string name="examination_tab1">待我审批</string>
     <string name="examination_tab2">已审批</string>
     <string name="examination">审批</string>
+    <string name="unexamined">未审批</string>
+    <string name="examined">已同意</string>
+    <string name="student_title">学生</string>
+    <string name="student_tab1">已毕业</string>
+    <string name="student_tab2">已有班级</string>
+    <string name="student_tab3">未有班级</string>
 
 </resources>

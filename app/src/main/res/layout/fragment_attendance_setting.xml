@@ -9,7 +9,7 @@
         android:id="@+id/rl_attendance_add_group"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="@drawable/selector_item_individual"
+        android:background="@drawable/selector_translucent_white"
         android:clickable="true"
         android:padding="16dp">
 
@@ -38,8 +38,6 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_attendance"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

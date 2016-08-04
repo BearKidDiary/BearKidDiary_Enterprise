@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -16,6 +17,8 @@ import com.bearkiddiary.enterprise.ui.fragment.AttendanceSettingFragment;
 import com.bearkiddiary.enterprise.ui.fragment.AttendanceAddFragment;
 
 public class WorkAttendanceActivity extends BaseActivity {
+    private static final String TAG = "WorkAttendanceActivity";
+
     public static final int TABONE = 0;
     public static final int TABTWO = 1;
     public static final int TABTHREE = 2;
@@ -66,13 +69,17 @@ public class WorkAttendanceActivity extends BaseActivity {
                 tv_title.setText("考勤统计");
                 iv_tab1.setVisibility(View.GONE);
                 iv_tab2.setVisibility(View.VISIBLE);
-                if (mFragments[tabNum] == null)
+                if (mFragments[tabNum] == null) {
                     mFragments[TABTWO] = new AttendanceCountFragment();
+                    Log.e(TAG, "refresh , new AttendanceCountFragment()");
+                }
                 break;
             case TABTHREE:
                 tv_title.setText("考勤设置");
-                if (mFragments[tabNum] == null)
+                if (mFragments[tabNum] == null) {
                     mFragments[TABTHREE] = new AttendanceAddFragment();
+                    Log.e(TAG, "refresh , new AttendanceAddFragment()");
+                }
                 break;
             default:
                 break;

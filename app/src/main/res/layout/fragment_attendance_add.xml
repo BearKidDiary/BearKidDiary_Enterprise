@@ -23,7 +23,7 @@
             android:singleLine="true"
             android:layout_margin="16dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/drawable_edit_normal"
+            android:background="@drawable/selector_translucent_rect_white"
             android:clickable="true"
             android:gravity="center"/>
     </LinearLayout>
@@ -46,7 +46,7 @@
             android:layout_margin="16dp"
             android:layout_gravity="center_vertical"
             android:clickable="true"
-            android:background="@drawable/drawable_edit_normal"
+            android:background="@drawable/selector_translucent_rect_white"
             android:gravity="center"/>
     </LinearLayout>
 

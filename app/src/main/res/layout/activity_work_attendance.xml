@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clickable="true"
-            android:background="@drawable/selector_item_individual"
+            android:background="@drawable/selector_translucent"
             android:orientation="vertical">
 
             <ImageView
@@ -84,7 +84,7 @@
             android:id="@+id/rl_work_attendance_tab2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/selector_item_individual"
+            android:background="@drawable/selector_translucent"
             android:layout_weight="1"
             android:clickable="true"
             android:orientation="vertical">

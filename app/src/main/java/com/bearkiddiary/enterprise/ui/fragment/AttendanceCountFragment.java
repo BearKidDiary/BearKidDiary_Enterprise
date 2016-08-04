@@ -2,6 +2,7 @@ package com.bearkiddiary.enterprise.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.fragment.ifragment.IAttendanceCountFragment;
+import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
 import java.util.Calendar;
 
@@ -18,8 +20,11 @@ import java.util.Calendar;
  * 考勤统计界面
  */
 public class AttendanceCountFragment extends BaseFragment implements IAttendanceCountFragment{
+    private static final String TAG = "AttendanceCountFragment";
+
     private Context mContext;
     private Calendar calendar;
+
     protected RelativeLayout rl_minus;
     protected RelativeLayout rl_plus;
     protected TextView tv_calendar;
@@ -38,6 +43,7 @@ public class AttendanceCountFragment extends BaseFragment implements IAttendance
     }
 
     private void initView(View view) {
+        Log.e(TAG, "initView()");
         calendar = Calendar.getInstance();
         rl_minus = (RelativeLayout) view.findViewById(R.id.rl_calendar_minus);
         rl_plus = (RelativeLayout) view.findViewById(R.id.rl_calendar_plus);
@@ -50,11 +56,12 @@ public class AttendanceCountFragment extends BaseFragment implements IAttendance
 
         rl_minus.setOnClickListener(v -> {
             calendarMinus();
-            refreshUI();
         });
         rl_plus.setOnClickListener(v -> {
             calendarIncrease();
-            refreshUI();
+        });
+        tv_calendar.setOnClickListener(v -> {
+            DateTimePickerUtil.showWeekAndDatePicker(mContext, calendar, this::refreshUI);
         });
 
         refreshUI();
@@ -72,26 +79,16 @@ public class AttendanceCountFragment extends BaseFragment implements IAttendance
     }
 
     private void refreshUI() {
-        showCalendar();
+        tv_calendar.setText(DateTimePickerUtil.getFormatDate(calendar));
         setCount(0,0,0,0,0);
     }
 
     @Override
-    public void showCalendar() {
-        String date =
-                calendar.get(Calendar.DAY_OF_WEEK) + " " +
-                calendar.get(Calendar.YEAR) + "-" +
-                calendar.get(Calendar.MONTH) + "-" +
-                calendar.get(Calendar.DAY_OF_MONTH);
-        tv_calendar.setText(date);
-    }
-
-    @Override
     public void setCount(int normal, int absence, int leave, int late, int absenteeism) {
-        tv_normal.setText(normal);
-        tv_absence.setText(absence);
-        tv_leave.setText(leave);
-        tv_late.setText(late);
-        tv_absenteeism.setText(absenteeism);
+        tv_normal.setText(normal + "");
+        tv_absence.setText(absence + "");
+        tv_leave.setText(leave + "");
+        tv_late.setText(late + "");
+        tv_absenteeism.setText(absenteeism + "");
     }
 }

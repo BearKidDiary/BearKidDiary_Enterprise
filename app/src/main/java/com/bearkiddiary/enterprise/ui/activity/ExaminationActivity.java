@@ -69,7 +69,7 @@ public class ExaminationActivity extends BaseActivity {
                 break;
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_work_attendance_contain, mFragments[tabNum]);
+        transaction.replace(R.id.activity_examination_contain, mFragments[tabNum]);
         transaction.commit();
     }
 
