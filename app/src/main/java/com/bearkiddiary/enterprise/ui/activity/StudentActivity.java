@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.ui.fragment.BaseFragment;
+import com.bearkiddiary.enterprise.ui.fragment.StudentAssignedFragment;
+import com.bearkiddiary.enterprise.ui.fragment.StudentGraduatedFragment;
+import com.bearkiddiary.enterprise.ui.fragment.StudentUnassignedFragment;
 
 /**
  * Created by YarenChoi on 2016/8/1.
@@ -47,36 +49,49 @@ public class StudentActivity extends BaseActivity {
         iv_tab[TABTWO] = (ImageView) findViewById(R.id.iv_student_tab2);
         iv_tab[TABTHREE] = (ImageView) findViewById(R.id.iv_student_tab3);
 
-        selected = -1;
-        changeTab(TABONE);
+        mFragments[TABONE] = new StudentGraduatedFragment();
+        mFragments[TABTWO] = new StudentAssignedFragment();
+        mFragments[TABTHREE] = new StudentUnassignedFragment();
+
+        initContain();
+    }
+
+    private void initContain() {
+        selected = TABONE;
+        iv_tab[selected].setVisibility(View.VISIBLE);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.activity_student_contain, mFragments[TABONE]);
+        transaction.commit();
     }
 
     private void changeTab(int tabNum) {
         if (tabNum == selected) {
             return;
-        } else {
-            if (selected != -1) {
-                iv_tab[selected].setVisibility(View.GONE);
+        }
+        iv_tab[selected].setVisibility(View.GONE);
+        iv_tab[tabNum].setVisibility(View.VISIBLE);
+        changeFragment(tabNum);
+    }
+
+    /**
+     * 切换fragment
+     * @param tabNum 目标fragment
+     */
+    public void changeFragment(int tabNum){
+        if (mFragments[tabNum] != mFragments[selected]){
+            if (mFragments[tabNum].isAdded()){
+                getSupportFragmentManager().beginTransaction()
+                        .hide(mFragments[selected])
+                        .show(mFragments[tabNum])
+                        .commit();
+            }else {
+                getSupportFragmentManager().beginTransaction()
+                        .hide(mFragments[selected])
+                        .add(R.id.activity_student_contain, mFragments[tabNum])
+                        .commit();
             }
-            iv_tab[tabNum].setVisibility(View.VISIBLE);
             selected = tabNum;
         }
-        if (mFragments[tabNum] == null) {
-            switch (tabNum) {
-                case TABONE:
-                    mFragments[TABONE] = new BaseFragment();
-                    break;
-                case TABTWO:
-                    mFragments[TABTWO] = new BaseFragment();
-                    break;
-                case TABTHREE:
-                    mFragments[TABTHREE] = new BaseFragment();
-                    break;
-            }
-        }
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_student_contain, mFragments[tabNum]);
-        transaction.commit();
     }
 
     public static void startActivity(Context context){

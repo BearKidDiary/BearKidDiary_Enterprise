@@ -10,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
 import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
+import com.gc.materialdesign.views.ButtonFloat;
 
 /**
  * Created by YarenChoi on 2016/7/28.
@@ -20,7 +22,9 @@ public class AttendanceAddFragment extends BaseFragment {
     private Context mContext;
     protected TextView tv_start_time;
     protected TextView tv_end_time;
+    protected ButtonFloat btn_finish;
 
+    WeekdayHolder weekdayHolder;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_attendance_add, container, false);
@@ -30,13 +34,26 @@ public class AttendanceAddFragment extends BaseFragment {
     }
 
     private void initView(View view) {
-        WeekdayHolder weekdayHolder = new WeekdayHolder(view);
+        weekdayHolder = new WeekdayHolder(view);
         tv_start_time = (TextView) view.findViewById(R.id.tv_attendance_add_start);
         tv_end_time = (TextView) view.findViewById(R.id.tv_attendance_add_end);
+        btn_finish = (ButtonFloat) view.findViewById(R.id.btn_attendance_add_finish);
         tv_start_time.setOnClickListener(v ->
                 DateTimePickerUtil.showTimePicker(mContext, time -> tv_start_time.setText(time)));
         tv_end_time.setOnClickListener(v ->
                 DateTimePickerUtil.showTimePicker(mContext, time -> tv_end_time.setText(time)));
+        btn_finish.setOnClickListener(v -> {
+            reset();
+            ((WorkAttendanceActivity)getActivity()).changeTab(WorkAttendanceActivity.TABONE);
+        });
+    }
+
+    private void reset() {
+        tv_start_time.setText("");
+        tv_end_time.setText("");
+        if (weekdayHolder != null) {
+            weekdayHolder.reset();
+        }
     }
 
     private class WeekdayHolder {
@@ -76,6 +93,14 @@ public class AttendanceAddFragment extends BaseFragment {
 
         public void open() {
             lockState = true;
+        }
+
+        public void reset() {
+            for (int i = 0; i < 7; i++) {
+                tv_weekday[i].setBackgroundResource(R.drawable.drawable_edit_normal);
+                tv_weekday[i].setTextColor(getResources().getColor(R.color.text_gray));
+                isCheck[i] = false;
+            }
         }
 
     }

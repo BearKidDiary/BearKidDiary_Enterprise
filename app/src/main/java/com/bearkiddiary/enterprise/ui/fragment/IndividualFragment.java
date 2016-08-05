@@ -2,6 +2,7 @@ package com.bearkiddiary.enterprise.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ import com.bearkiddiary.enterprise.ui.fragment.ifragment.IIndividualFragment;
  * 个人界面
  */
 public class IndividualFragment extends BaseFragment implements IIndividualFragment, View.OnClickListener {
+    private static final String TAG = "IndividualFragment";
+
     private Context mContext;
     protected TextView nameTv;
     protected TextView phoneNumTv;
@@ -99,4 +102,5 @@ public class IndividualFragment extends BaseFragment implements IIndividualFragm
     public void setAvatar(int imgResource) {
         avatarIv.setImageResource(imgResource);
     }
+
 }

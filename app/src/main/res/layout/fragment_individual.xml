@@ -1,216 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_gray">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/colorPrimary">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tabView_3"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/tabView_3"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
-        </RelativeLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray">
         <LinearLayout
-            android:id="@+id/ll_individual_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp">
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/ll_individual_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp">
 
-            <ImageView
-                android:id="@+id/iv_individual_avatar"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/avatar" />
+                <ImageView
+                    android:id="@+id/iv_individual_avatar"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/avatar" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="8dp"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/tv_individual_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_individual_phonenum"
+                        style="@style/style_text_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:singleLine="true" />
+
+                </RelativeLayout>
+            </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_marginLeft="8dp"
-                android:padding="3dp">
+                android:id="@+id/rl_individual_resume"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/individual_resume" />
 
                 <TextView
-                    android:id="@+id/tv_individual_name"
+                    style="@style/style_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/text_black"
-                    android:textSize="20sp" />
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_resume" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_individual_organization"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/individual_organization" />
 
                 <TextView
-                    android:id="@+id/tv_individual_phonenum"
-                    style="@style/style_text_black"
+                    style="@style/style_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:singleLine="true" />
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_organization" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_individual_scan"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/ic_me_scan" />
+
+                <TextView
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_scan" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_individual_qr_code"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/ic_me_qrcode" />
+
+                <TextView
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_qr_code" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_individual_customer_service"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_translucent_white"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/individual_customer_service" />
+
+                <TextView
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_customer_service" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_individual_settings"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/selector_translucent_white"
+                android:layout_marginBottom="1dp"
+                android:clickable="true">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="32dp"
+                    android:src="@drawable/individual_settings" />
+
+                <TextView
+                    style="@style/style_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/individual_settings" />
 
             </RelativeLayout>
         </LinearLayout>
+    </ScrollView>
 
-        <RelativeLayout
-            android:id="@+id/rl_individual_resume"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/individual_resume" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_resume" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/rl_individual_organization"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/individual_organization" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_organization" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/rl_individual_scan"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/ic_me_scan" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_scan" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_individual_qr_code"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/ic_me_qrcode" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_qr_code" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_individual_customer_service"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/individual_customer_service" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_customer_service" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_individual_settings"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/selector_translucent_white"
-            android:clickable="true">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="32dp"
-                android:src="@drawable/individual_settings" />
-
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/individual_settings" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
