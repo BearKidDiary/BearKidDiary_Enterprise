@@ -6,7 +6,7 @@
     android:background="@color/bg_gray"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.bearkiddiary.enterprise.ui.activity.StudentActivity">
+    tools:context=".ui.activity.StudentsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -62,7 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/student_tab1"
-                android:textSize="20sp" />
+                android:textStyle="bold"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <View
@@ -95,7 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/student_tab2"
-                android:textSize="20sp" />
+                android:textStyle="bold"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <View
@@ -128,7 +130,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/student_tab3"
-                android:textSize="20sp" />
+                android:textStyle="bold"
+                android:textSize="16sp" />
         </RelativeLayout>
 
     </LinearLayout>

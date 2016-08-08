@@ -91,5 +91,6 @@
     <string name="student_tab1">已毕业</string>
     <string name="student_tab2">已有班级</string>
     <string name="student_tab3">未有班级</string>
+    <string name="hint_contact">请输入关键字</string>
 
 </resources>

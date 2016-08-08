@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/translucent_bg_press">
+
+        <ImageView
+            android:id="@+id/iv_students_search"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_edit_search" />
+
+        <com.bearkiddiary.enterprise.ui.view.ClearEditText
+            android:id="@+id/et_filter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_students_search"
+            android:background="@null"
+            android:drawableRight="@drawable/ic_clear_edit"
+            android:hint="@string/hint_contact"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/shape_cursor"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_students"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:requiresFadingEdge="none"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/tv_students_dialog"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_show_head_toast"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:visibility="invisible" />
+
+        <com.bearkiddiary.enterprise.ui.view.SideBar
+            android:id="@+id/sideBar_students"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>
