@@ -23,7 +23,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
     private List<Students> dataList;
     private Context mContext;
 
-    public StudentsAdapter(Context mContext){
+    public StudentsAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -43,10 +43,10 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
         int section = getSectionForPosition(position);
 
         //如果当前位置等于该分类首字母的Char的位置 ，则认为是第一次出现
-        if(position == getPositionForSection(section)){
+        if (position == getPositionForSection(section)) {
             holder.tv_letter.setVisibility(View.VISIBLE);
             holder.tv_letter.setText(dataList.get(position).getPingyin());
-        }else{
+        } else {
             holder.tv_letter.setVisibility(View.GONE);
         }
 
@@ -65,6 +65,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
 
     /**
      * 刷新数据
+     *
      * @param dataList 新的数据列表
      */
     public void refreshData(List<Students> dataList) {
@@ -99,6 +100,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
         TextView tv_letter;
         TextView tv_name;
         CircleImageview iv_avatar;
+
         public ViewHolder(View view) {
             super(view);
             root = (RelativeLayout) view.findViewById(R.id.rl_students_root);
@@ -107,4 +109,5 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
             iv_avatar = (CircleImageview) view.findViewById(R.id.iv_students_avatar);
         }
     }
+
 }

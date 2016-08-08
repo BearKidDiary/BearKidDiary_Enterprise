@@ -5,20 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.adapter.StudentsAdapter;
-import com.bearkiddiary.enterprise.model.bean.Students;
 import com.bearkiddiary.enterprise.ui.fragment.StudentsFragment;
-import com.bearkiddiary.enterprise.utils.PinyinUtils;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by YarenChoi on 2016/8/1.
@@ -100,60 +92,6 @@ public class StudentsActivity extends BaseActivity {
         }
     }
 
-
-    /**
-     * 为ListView填充数据
-     * @param date 名字数据
-     * @return 过滤后的数组
-     */
-    public List<Students> filledData(String [] date){
-        List<Students> mSortList = new ArrayList<Students>();
-
-        for(int i=0; i<date.length; i++){
-            Students sortModel = new Students();
-            sortModel.setName(date[i]);
-            //汉字转换成拼音
-            String pinyin = PinyinUtils.getPingYin(date[i]);
-            String sortString = pinyin.substring(0,1).toUpperCase();
-
-            // 正则表达式，判断首字母是否是英文字母
-            if(sortString.matches("[A-Z]")){
-                sortModel.setPingyin(sortString.toUpperCase());
-            }else{
-                sortModel.setPingyin("#");
-            }
-
-            mSortList.add(sortModel);
-        }
-        Collections.sort(mSortList);
-        return mSortList;
-
-    }
-
-
-    /**
-     * 根据输入框中的值来过滤数据并更新ListView
-     * @param filterStr 输入框中的字符串
-     */
-    public void filterData(String filterStr, List<Students> sourceDateList, StudentsAdapter studentsAdapter){
-        List<Students> filterDateList = new ArrayList<>();
-
-        if(TextUtils.isEmpty(filterStr)){
-            filterDateList = sourceDateList;
-        }else{
-            filterDateList.clear();
-            for(Students sortModel : sourceDateList){
-                String name = sortModel.getName();
-                if(name.contains(filterStr) || PinyinUtils.getPingYin(name).startsWith(filterStr)){
-                    filterDateList.add(sortModel);
-                }
-            }
-        }
-
-        // 根据a-z进行排序
-        Collections.sort(filterDateList);
-        studentsAdapter.refreshData(filterDateList);
-    }
 
     public static void startActivity(Context context){
         context.startActivity(new Intent(context, StudentsActivity.class));
