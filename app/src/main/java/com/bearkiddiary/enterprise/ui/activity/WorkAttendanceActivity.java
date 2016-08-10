@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -16,6 +17,8 @@ import com.bearkiddiary.enterprise.ui.fragment.AttendanceSettingFragment;
 import com.bearkiddiary.enterprise.ui.fragment.AttendanceAddFragment;
 
 public class WorkAttendanceActivity extends BaseActivity {
+    private static final String TAG = "WorkAttendanceActivity";
+
     public static final int TABONE = 0;
     public static final int TABTWO = 1;
     public static final int TABTHREE = 2;
@@ -44,42 +47,54 @@ public class WorkAttendanceActivity extends BaseActivity {
         iv_tab1 = (ImageView) findViewById(R.id.iv_work_attendance_tab1);
         iv_tab2 = (ImageView) findViewById(R.id.iv_work_attendance_tab2);
 
-        selected = -1;
-        changeTab(TABONE);
+        initContain();
+    }
+
+    private void initContain() {
+        selected = TABONE;
+        mFragments[TABONE] = new AttendanceSettingFragment();
+        mFragments[TABTWO] = new AttendanceCountFragment();
+        mFragments[TABTHREE] = new AttendanceAddFragment();
+        tv_title.setText("考勤组管理");
+        iv_tab1.setVisibility(View.VISIBLE);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.activity_work_attendance_contain, mFragments[selected]);
+        transaction.commit();
     }
 
     public void changeTab(int tabNum) {
         if (tabNum == selected) {
             return;
-        } else {
-            selected = tabNum;
         }
         switch (tabNum) {
             case TABONE:
                 tv_title.setText("考勤组管理");
                 iv_tab1.setVisibility(View.VISIBLE);
                 iv_tab2.setVisibility(View.GONE);
-                if (mFragments[tabNum] == null)
-                    mFragments[TABONE] = new AttendanceSettingFragment();
                 break;
             case TABTWO:
                 tv_title.setText("考勤统计");
                 iv_tab1.setVisibility(View.GONE);
                 iv_tab2.setVisibility(View.VISIBLE);
-                if (mFragments[tabNum] == null)
-                    mFragments[TABTWO] = new AttendanceCountFragment();
                 break;
             case TABTHREE:
                 tv_title.setText("考勤设置");
-                if (mFragments[tabNum] == null)
-                    mFragments[TABTHREE] = new AttendanceAddFragment();
                 break;
             default:
                 break;
         }
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_work_attendance_contain, mFragments[tabNum]);
-        transaction.commit();
+        if (mFragments[tabNum].isAdded()){
+            getSupportFragmentManager().beginTransaction()
+                    .hide(mFragments[selected])
+                    .show(mFragments[tabNum])
+                    .commit();
+        }else {
+            getSupportFragmentManager().beginTransaction()
+                    .hide(mFragments[selected])
+                    .add(R.id.activity_work_attendance_contain, mFragments[tabNum])
+                    .commit();
+        }
+        selected = tabNum;
     }
 
     public static void startActivity(Context context){

@@ -22,6 +22,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Fragment[] mFragments = new Fragment[3];
     //private MainPresenter presenter;
 
+    private Fragment tempFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,31 +62,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         ((TextView) tab[selected].getChildAt(1)).setTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         mFragments[0] = new MessageFragment();
+        mFragments[1] = new OrganizationFragment();
+        mFragments[2] = new IndividualFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_main_contain, mFragments[0]);
+        transaction.add(R.id.activity_main_contain, mFragments[0]);
         transaction.commit();
+        tempFragment = mFragments[0];
     }
 
     private void changeTab(int tabNum) {
         onTabSelected(tabNum);
-        if (mFragments[tabNum] == null) {
-            switch (tabNum) {
-                case 0:
-                    mFragments[0] = new MessageFragment();
-                    break;
-                case 1:
-                    mFragments[1] = new OrganizationFragment();
-                    break;
-                case 2:
-                    mFragments[2] = new IndividualFragment();
-                    break;
-                default:
-                    break;
+        changeFragment(mFragments[tabNum]);
+    }
+
+    /**
+     * 切换Fragment
+     * @param fragment
+     */
+    public void changeFragment(Fragment fragment){
+        if (fragment != tempFragment){
+            if (fragment.isAdded()){
+                getSupportFragmentManager().beginTransaction()
+                        .hide(tempFragment)
+                        .show(fragment)
+                        .commit();
+            }else {
+                getSupportFragmentManager().beginTransaction()
+                        .hide(tempFragment)
+                        .add(R.id.activity_main_contain, fragment)
+                        .commit();
             }
+            tempFragment = fragment;
         }
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_main_contain, mFragments[tabNum]);
-        transaction.commit();
     }
 
     private void onTabSelected(int tabNum) {

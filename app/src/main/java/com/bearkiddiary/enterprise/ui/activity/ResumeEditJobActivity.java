@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
+import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
 public class ResumeEditJobActivity extends BaseActivity {
     private static final int EDITEXP = 0;//编辑操作
@@ -21,6 +23,9 @@ public class ResumeEditJobActivity extends BaseActivity {
     protected EditText et_job_name;
     protected EditText et_desc;
 
+    protected TextView tv_start_date;
+    protected TextView tv_end_date;
+
     protected int opType;//判断是“新增”还是“编辑”操作
 
     @Override
@@ -32,6 +37,18 @@ public class ResumeEditJobActivity extends BaseActivity {
 
     private void initView() {
         findViewById(R.id.iv_title_back_resume_edit_job).setOnClickListener(view -> finish());
+
+        tv_start_date = (TextView) this.findViewById(R.id.tv_resume_job_start_date);
+        tv_end_date = (TextView) this.findViewById(R.id.tv_resume_job_end_date);
+
+        tv_start_date.setOnClickListener(view ->
+                DateTimePickerUtil.showMonthPicker(
+                        ResumeEditJobActivity.this,
+                        monthOfYear -> tv_start_date.setText(monthOfYear)));
+        tv_end_date.setOnClickListener(view ->
+                DateTimePickerUtil.showMonthPicker(
+                        ResumeEditJobActivity.this,
+                        monthOfYear -> tv_end_date.setText(monthOfYear)));
 
         et_company = (EditText) findViewById(R.id.et_resume_company);
         et_job_name = (EditText) findViewById(R.id.et_resume_job_name);

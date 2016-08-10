@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity">
+    tools:context="com.bearkiddiary.enterprise.ui.activity.ExaminationActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/iv_title_back_attendance"
+            android:id="@+id/iv_title_back_examination"
             android:layout_width="32dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
@@ -25,22 +25,14 @@
 
 
         <TextView
-            android:id="@+id/tv_title_work_attendance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:text="@string/examination"
             android:textColor="@color/txt_title"
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <FrameLayout
-        android:id="@+id/activity_work_attendance_contain"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/bg_gray">
-
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,18 +41,19 @@
         android:baselineAligned="false">
 
         <RelativeLayout
-            android:id="@+id/rl_work_attendance_tab1"
+            android:id="@+id/rl_examination_tab1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="true"
             android:background="@drawable/selector_translucent"
+            android:clickable="true"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/iv_work_attendance_tab1"
+                android:id="@+id/iv_examination_tab1"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
+                android:layout_alignParentBottom="true"
                 android:background="@color/color_red_light"
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
@@ -69,9 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/work_attendance_tab1"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:text="@string/examination_tab1"
+                android:textSize="20sp" />
         </RelativeLayout>
 
         <View
@@ -82,18 +74,19 @@
             android:background="@color/bg_gray" />
 
         <RelativeLayout
-            android:id="@+id/rl_work_attendance_tab2"
+            android:id="@+id/rl_examination_tab2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/selector_translucent"
             android:layout_weight="1"
+            android:background="@drawable/selector_translucent"
             android:clickable="true"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/iv_work_attendance_tab2"
+                android:id="@+id/iv_examination_tab2"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
+                android:layout_alignParentBottom="true"
                 android:background="@color/color_red_light"
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
@@ -102,10 +95,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/work_attendance_tab2"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:text="@string/examination_tab2"
+                android:textSize="20sp" />
         </RelativeLayout>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_examination_contain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bg_gray" />
 </LinearLayout>

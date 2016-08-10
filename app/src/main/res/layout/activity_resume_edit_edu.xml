@@ -91,14 +91,13 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:clickable="true"
-                    android:background="@drawable/drawable_edit_normal"
-                    android:gravity="center"
-                    android:text="2016-07"/>
+                    android:background="@drawable/selector_translucent_rect_white"
+                    android:gravity="center" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="@string/until"/>
+                    android:text="@string/until" />
                 <TextView
                     android:id="@+id/tv_resume_edu_end_date"
                     style="@style/style_text_black"
@@ -107,9 +106,8 @@
                     android:layout_height="match_parent"
                     android:singleLine="true"
                     android:clickable="true"
-                    android:background="@drawable/drawable_edit_normal"
-                    android:gravity="center"
-                    android:text="2017-01"/>
+                    android:background="@drawable/selector_translucent_rect_white"
+                    android:gravity="center" />
             </LinearLayout>
 
             <View
