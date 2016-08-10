@@ -1,122 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <RelativeLayout
-        android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/shape_gray"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/ll_attendance_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:padding="8dp"
-        android:background="@drawable/shape_gray">
-        <LinearLayout
-            android:id="@+id/ll_attendance_info"
-            android:padding="6dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:padding="6dp">
 
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="数学组"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="8人"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:text="不固定班制"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_attendance_week"
+        <TextView
+            style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_attendance_info">
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周一"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周二"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周三"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周四"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周五"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周六"/>
-            <TextView
-                style="@style/style_text_black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="周日"/>
-        </LinearLayout>
+            android:text="数学组" />
 
-        <LinearLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="8人" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="不固定班制" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_attendance_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_attendance_info">
+
+        <TextView
+            style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="6dp"
-            android:layout_below="@+id/ll_attendance_week">
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9:00"/>
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="～"/>
-            <TextView
-                style="@style/style_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00"/>
-        </LinearLayout>
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/trash" />
+            android:text="周一" />
 
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/edit" />
-    </RelativeLayout>
-</LinearLayout>
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周二" />
+
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周三" />
+
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周四" />
+
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周五" />
+
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周六" />
+
+        <TextView
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="周日" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_attendance_week"
+        android:padding="6dp">
+
+        <TextView
+            style="@style/style_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:00" />
+
+        <TextView
+            style="@style/style_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="～" />
+
+        <TextView
+            style="@style/style_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16:00" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/trash" />
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/edit" />
+</RelativeLayout>

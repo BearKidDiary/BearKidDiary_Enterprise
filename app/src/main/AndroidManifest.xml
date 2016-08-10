@@ -41,6 +41,8 @@
         <activity android:name=".ui.activity.GradeTeacherActivity" />
         <activity android:name=".ui.activity.ExaminationActivity" />
         <activity android:name=".ui.activity.StudentsActivity" />
+        <activity android:name=".ui.activity.StudentInfoActivity" />
+        <activity android:name=".ui.activity.RequestActivity"></activity>
     </application>
 
 </manifest>

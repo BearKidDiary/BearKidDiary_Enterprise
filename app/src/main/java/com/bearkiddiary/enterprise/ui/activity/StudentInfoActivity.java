@@ -6,58 +6,49 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.ui.fragment.StudentsFragment;
+import com.bearkiddiary.enterprise.ui.fragment.StudentInfoDetailFragment;
+import com.bearkiddiary.enterprise.ui.fragment.StudentInfoSettingFragment;
 
-/**
- * Created by YarenChoi on 2016/8/1.
- * 学生界面
- */
-
-public class StudentsActivity extends BaseActivity {
+public class StudentInfoActivity extends BaseActivity {
     private static final int TABONE = 0;
     private static final int TABTWO = 1;
-    private static final int TABTHREE = 2;
 
-    protected RelativeLayout rl_tab1, rl_tab2, rl_tab3;
-    protected ImageView[] iv_tab = new ImageView[3];
-    private Fragment[] mFragments = new Fragment[3];
+    protected RelativeLayout rl_tab1, rl_tab2;
+    protected ImageView[] iv_tab = new ImageView[2];
+    private Fragment[] mFragments = new Fragment[2];
     protected int selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student);
+        setContentView(R.layout.activity_student_info);
         initView();
         initContain();
     }
 
     private void initView() {
-        findViewById(R.id.iv_title_back_student).setOnClickListener(view -> finish());
-
-        rl_tab1 = (RelativeLayout) findViewById(R.id.rl_student_tab1);
-        rl_tab2 = (RelativeLayout) findViewById(R.id.rl_student_tab2);
-        rl_tab3 = (RelativeLayout) findViewById(R.id.rl_student_tab3);
+        findViewById(R.id.iv_title_back_student_info).setOnClickListener(v -> finish());
+        rl_tab1 = (RelativeLayout) findViewById(R.id.rl_student_info_tab1);
+        rl_tab2 = (RelativeLayout) findViewById(R.id.rl_student_info_tab2);
         rl_tab1.setOnClickListener(view -> changeTab(TABONE));
         rl_tab2.setOnClickListener(view -> changeTab(TABTWO));
-        rl_tab3.setOnClickListener(view -> changeTab(TABTHREE));
-        iv_tab[TABONE] = (ImageView) findViewById(R.id.iv_student_tab1);
-        iv_tab[TABTWO] = (ImageView) findViewById(R.id.iv_student_tab2);
-        iv_tab[TABTHREE] = (ImageView) findViewById(R.id.iv_student_tab3);
+        iv_tab[TABONE] = (ImageView) findViewById(R.id.iv_student_info_tab1);
+        iv_tab[TABTWO] = (ImageView) findViewById(R.id.iv_student_info_tab2);
 
-        mFragments[TABONE] = new StudentsFragment(StudentsFragment.GRADUATED);
-        mFragments[TABTWO] = new StudentsFragment(StudentsFragment.ASSIGNED);
-        mFragments[TABTHREE] = new StudentsFragment(StudentsFragment.UNASSIGNED);
+        mFragments[TABONE] = new StudentInfoSettingFragment();
+        mFragments[TABTWO] = new StudentInfoDetailFragment();
     }
 
     private void initContain() {
         selected = TABONE;
         iv_tab[selected].setVisibility(View.VISIBLE);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.activity_student_contain, mFragments[TABONE]);
+        transaction.add(R.id.activity_student_info_contain, mFragments[TABONE]);
         transaction.commit();
     }
 
@@ -84,15 +75,14 @@ public class StudentsActivity extends BaseActivity {
             }else {
                 getSupportFragmentManager().beginTransaction()
                         .hide(mFragments[selected])
-                        .add(R.id.activity_student_contain, mFragments[tabNum])
+                        .add(R.id.activity_student_info_contain, mFragments[tabNum])
                         .commit();
             }
             selected = tabNum;
         }
     }
 
-
     public static void startActivity(Context context){
-        context.startActivity(new Intent(context, StudentsActivity.class));
+        context.startActivity(new Intent(context, StudentInfoActivity.class));
     }
 }

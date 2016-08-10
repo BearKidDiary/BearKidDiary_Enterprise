@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.model.bean.Students;
@@ -18,13 +17,13 @@ import java.util.List;
 
 /**
  * Created by YarenChoi on 2016/8/8.
- * 学生列表适配器
+ * 联系人列表适配器
  */
-public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
     private List<Students> dataList;
     private Context mContext;
 
-    public StudentsAdapter(Context mContext) {
+    public ContactAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
