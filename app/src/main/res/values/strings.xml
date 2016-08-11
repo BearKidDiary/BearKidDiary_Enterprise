@@ -116,5 +116,6 @@
     <string name="request_module_6">绩效自评</string>
     <string name="request_module_7">离职</string>
     <string name="request_module_8">通用审批</string>
+    <string name="ask_for_leave_title">请假</string>
 
 </resources>
