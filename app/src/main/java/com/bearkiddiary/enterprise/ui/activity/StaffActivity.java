@@ -61,6 +61,7 @@ public class StaffActivity extends BaseActivity {
         sideMenu.setOnClickMenuItemListener((v, postion) -> {
             switch (v.getId()) {
                 case R.id.btn_staff_add://添加员工
+                    AddEmployeeActivity.startActivity(StaffActivity.this);
                     break;
                 case R.id.btn_staff_grade://等级评价
                     GradeTeacherActivity.startActivity(getContext());

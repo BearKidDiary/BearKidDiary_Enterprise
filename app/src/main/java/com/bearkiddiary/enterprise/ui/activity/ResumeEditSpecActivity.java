@@ -33,6 +33,7 @@ public class ResumeEditSpecActivity extends BaseActivity {
         });
 
         specEt.setText(getIntent().getStringExtra(SPEC));
+        specEt.setSelection(getIntent().getStringExtra(SPEC).length());
     }
 
     public static void startActivity(Context context, String spec){

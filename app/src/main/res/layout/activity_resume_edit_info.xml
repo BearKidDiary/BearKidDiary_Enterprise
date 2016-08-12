@@ -65,32 +65,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp">
+
             <TextView
                 style="@style/style_text_hint"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="@string/resume_edit_gender"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/btn_resume_gender_male"
-                    android:background="@color/gender_normal"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:textColor="@color/text_white"
-                    android:text="@string/male"/>
-                <Button
-                    android:id="@+id/btn_resume_gender_female"
-                    android:background="@color/gender_normal"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="32dp"
-                    android:textColor="@color/text_white"
-                    android:text="@string/female"/>
-            </LinearLayout>
+                android:text="@string/resume_edit_gender" />
+
+            <Button
+                android:id="@+id/btn_resume_gender_male"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@color/gender_normal"
+                android:text="@string/male"
+                android:textColor="@color/text_white" />
+
+            <Button
+                android:id="@+id/btn_resume_gender_female"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:background="@color/gender_normal"
+                android:text="@string/female"
+                android:textColor="@color/text_white" />
         </LinearLayout>
 
         <View

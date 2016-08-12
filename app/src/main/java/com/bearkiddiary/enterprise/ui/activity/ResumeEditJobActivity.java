@@ -59,6 +59,7 @@ public class ResumeEditJobActivity extends BaseActivity {
 
         } else if (opType == EDITEXP){
             et_company.setText(getIntent().getStringExtra(COMPANY));
+            et_company.setSelection(getIntent().getStringExtra(COMPANY).length());
             et_job_name.setText(getIntent().getStringExtra(JOB));
             et_desc.setText(getIntent().getStringExtra(DESC));
         }

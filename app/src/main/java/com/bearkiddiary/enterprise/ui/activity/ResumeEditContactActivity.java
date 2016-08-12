@@ -39,6 +39,7 @@ public class ResumeEditContactActivity extends BaseActivity {
         });
 
         phoneEt.setText(getIntent().getStringExtra(PHONE));
+        phoneEt.setSelection(getIntent().getStringExtra(PHONE).length());
         emailEt.setText(getIntent().getStringExtra(EMAIL));
         qqEt.setText(getIntent().getStringExtra(QQ));
     }

@@ -1,5 +1,6 @@
 package com.bearkiddiary.enterprise.utils;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -11,6 +12,8 @@ import android.widget.DatePicker;
 
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.lang.reflect.Field;
 
@@ -24,6 +27,9 @@ public class DateTimePickerUtil {
 
     private static final DecimalFormat decimalFormat = new DecimalFormat("00");
 
+    @SuppressLint("SimpleDateFormat")
+    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
     /**
      *
      * @param context The context the dialog is to run in.
@@ -33,9 +39,8 @@ public class DateTimePickerUtil {
         Calendar calendar = Calendar.getInstance();
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 context,
-                (view, year, monthOfYear, dayOfMonth) -> {
-                    onDateSetListener.onDateSet(getFormatDate(year, monthOfYear, dayOfMonth));
-                },
+                (view, year, monthOfYear, dayOfMonth) ->
+                        onDateSetListener.onDateSet(getFormatDate(year, monthOfYear, dayOfMonth)),
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
@@ -165,6 +170,25 @@ public class DateTimePickerUtil {
         return decimalFormat.format(hour) + ":" + decimalFormat.format(minute);
     }
 
+    /**
+     *
+     * @param startTime 已格式化的起始日期字符串
+     * @param endTime 已格式化的结束日期字符串
+     * @return 日期相减天数
+     */
+    public static long getComparedDayCount(String startTime, String endTime) {
+        long dayCount = 0;
+        try {
+            dayCount = dateFormat.parse(startTime).getTime()
+                    - dateFormat.parse(endTime).getTime()
+                    /(24*60*60*1000);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            Log.e(TAG, "parse date failed!");
+        }
+        return dayCount;
+    }
+
     public interface OnDateSetListener {
         void onDateSet(String date);
     }
@@ -181,6 +205,9 @@ public class DateTimePickerUtil {
         void onTimeSet(String time);
     }
 
+    /**
+     * 自定义年月选择器对话框
+     */
     private static class MonthPickerDialog extends DatePickerDialog {
         private static final String TITLE = "请选择年月";
 

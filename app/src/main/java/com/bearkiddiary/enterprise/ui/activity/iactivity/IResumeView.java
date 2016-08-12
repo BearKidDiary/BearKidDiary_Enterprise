@@ -1,7 +1,8 @@
 package com.bearkiddiary.enterprise.ui.activity.iactivity;
 
 /**
- * Created by admin on 2016/7/25.
+ * Created by YarenChoi on 2016/7/25.
+ * 个人简历界面
  */
 public interface IResumeView extends IBaseView {
     void setAvatar(int imgResource);

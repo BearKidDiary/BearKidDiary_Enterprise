@@ -43,7 +43,9 @@
         <activity android:name=".ui.activity.StudentsActivity" />
         <activity android:name=".ui.activity.StudentInfoActivity" />
         <activity android:name=".ui.activity.RequestActivity" />
-        <activity android:name=".ui.activity.AskForLeaveActivity"></activity>
+        <activity android:name=".ui.activity.AskForLeaveActivity" />
+        <activity android:name=".ui.activity.AddEmployeeActivity" />
+        <activity android:name=".ui.activity.PersonalInfoEditActivity"></activity>
     </application>
 
 </manifest>

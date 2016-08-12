@@ -33,9 +33,11 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/ll_leave_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_translucent"
+        android:clickable="true"
         android:gravity="center_vertical"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
@@ -46,7 +48,7 @@
             style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="请假类型" />
+            android:text="@string/leave_type" />
 
         <TextView
             android:id="@+id/tv_leave_type"
@@ -56,7 +58,7 @@
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:gravity="end"
-            android:text="请选择" />
+            android:text="@string/choose" />
 
         <ImageView
             android:layout_width="16dp"
@@ -71,10 +73,12 @@
         android:background="@color/bg_gray" />
 
     <LinearLayout
+        android:id="@+id/ll_leave_start_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_translucent"
         android:gravity="center_vertical"
+        android:clickable="true"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -84,7 +88,7 @@
             style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始时间" />
+            android:text="@string/leave_start_time" />
 
         <TextView
             android:id="@+id/tv_leave_start_time"
@@ -94,7 +98,7 @@
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:gravity="end"
-            android:text="请选择" />
+            android:text="@string/choose" />
 
         <ImageView
             android:layout_width="16dp"
@@ -109,10 +113,12 @@
         android:background="@color/bg_gray" />
 
     <LinearLayout
+        android:id="@+id/ll_leave_end_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_translucent"
         android:gravity="center_vertical"
+        android:clickable="true"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -122,7 +128,7 @@
             style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="结束时间" />
+            android:text="@string/leave_end_time" />
 
         <TextView
             android:id="@+id/tv_leave_end_time"
@@ -132,7 +138,7 @@
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:gravity="end"
-            android:text="请选择" />
+            android:text="@string/choose" />
 
         <ImageView
             android:layout_width="16dp"
@@ -149,7 +155,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/selector_translucent"
         android:gravity="center_vertical"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
@@ -160,7 +165,7 @@
             style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="请假天数" />
+            android:text="@string/leave_day" />
 
         <TextView
             android:id="@+id/tv_leave_day"
@@ -169,8 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:gravity="end"
-            android:text="1天" />
+            android:gravity="end" />
     </LinearLayout>
 
     <View
@@ -193,9 +197,10 @@
             style="@style/style_text_black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请假原因" />
+            android:text="@string/leave_reason" />
 
         <EditText
+            android:id="@+id/et_leave_reason"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -213,10 +218,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="审批人" />
+        android:text="@string/leave_approver" />
 
     <ImageView
+        android:id="@+id/iv_leave_add_approver"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:clickable="true"
         android:src="@drawable/ic_me_add" />
+
+    <Button
+        android:id="@+id/btn_leave_submit"
+        style="@style/style_text_white"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/selector_btn_dismiss"
+        android:text="@string/leave_submit"/>
 </LinearLayout>

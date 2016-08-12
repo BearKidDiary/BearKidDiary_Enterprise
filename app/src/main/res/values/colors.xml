@@ -15,13 +15,14 @@
     <color name="text_black">#ff3e3e39</color>
     <color name="text_white">#ffffffff</color>
     <color name="color_line">#ffdadada</color>
-    <color name="text_clickable">#b39dbd</color>
-    <color name="text_clicked">#9575cd</color>
+    <color name="text_clickable">#6f37474f</color>
+    <color name="text_clicked">#6f263238</color>
     <color name="text_gray">#d7d7d7</color>
 
     <color name="tab_choose">#ff37474f</color>
 
     <color name="gender_normal">#EDEDED</color>
-    <color name="gender_choose">#ff82ab</color>
+    <color name="gender_choose">#ff263238</color>
+    <color name="warning">#ff0000</color>
 
 </resources>
