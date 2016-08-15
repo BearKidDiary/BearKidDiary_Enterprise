@@ -141,5 +141,6 @@
     <string name="personal_info_edit_gender">修改性别信息</string>
     <string name="personal_info_edit_address">修改地址信息"</string>
     <string name="personal_info_edit_email">修改邮箱信息</string>
+    <string name="qrcode_title">我的二维码</string>
 
 </resources>
