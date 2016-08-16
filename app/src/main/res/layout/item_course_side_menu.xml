@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_roll_call"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -34,6 +35,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_mass"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -55,6 +57,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_add"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
@@ -76,6 +79,7 @@
         android:orientation="vertical">
 
         <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_course_grade"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"

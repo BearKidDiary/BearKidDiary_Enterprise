@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.adapter.StudentsAdapter;
-import com.bearkiddiary.enterprise.model.bean.Students;
+import com.bearkiddiary.enterprise.adapter.KidsAdapter;
+import com.bearkiddiary.enterprise.model.bean.Kid;
 import com.bearkiddiary.enterprise.ui.view.ClearEditText;
 import com.bearkiddiary.enterprise.ui.view.SideBar;
 import com.bearkiddiary.enterprise.utils.PinyinUtils;
@@ -42,9 +42,9 @@ public class StudentsFragment extends BaseFragment {
     protected SideBar sideBar;//联系人的字母标识栏
     protected RecyclerView rv_students;
     protected TextView tv_students_dialog;
-    protected List<Students> studentsList;//联系人列表
+    protected List<Kid> studentsList;//联系人列表
 
-    public StudentsAdapter adapter;
+    public KidsAdapter adapter;
 
     public StudentsFragment(int type) {
         this.type = type;
@@ -91,7 +91,7 @@ public class StudentsFragment extends BaseFragment {
             }
         });
 
-        adapter = new StudentsAdapter(mContext);
+        adapter = new KidsAdapter(mContext);
         //学生列表
         rv_students.setLayoutManager(new LinearLayoutManager(getContext()));
         rv_students.setItemAnimator(new DefaultItemAnimator());
@@ -108,12 +108,12 @@ public class StudentsFragment extends BaseFragment {
      * @param date 名字数据
      * @return 过滤后的数组
      */
-    private List<Students> filledData(String [] date){
-        List<Students> mSortList = new ArrayList<>();
+    private List<Kid> filledData(String [] date){
+        List<Kid> mSortList = new ArrayList<>();
 
         for (String aDate : date) {
-            Students sortModel = new Students();
-            sortModel.setName(aDate);
+            Kid sortModel = new Kid();
+            sortModel.setKname(aDate);
             //汉字转换成拼音
             String pinyin = PinyinUtils.getPingYin(aDate);
             String sortString = pinyin.substring(0, 1).toUpperCase();
@@ -138,14 +138,14 @@ public class StudentsFragment extends BaseFragment {
      * @param filterStr 输入框中的字符串
      */
     private void filterData(String filterStr){
-        List<Students> filterDateList = new ArrayList<>();
+        List<Kid> filterDateList = new ArrayList<>();
 
         if(TextUtils.isEmpty(filterStr)){
             filterDateList = studentsList;
         }else{
             filterDateList.clear();
-            for(Students sortModel : studentsList){
-                String name = sortModel.getName();
+            for(Kid sortModel : studentsList){
+                String name = sortModel.getKname();
                 if(name.contains(filterStr) || PinyinUtils.getPingYin(name).startsWith(filterStr)){
                     filterDateList.add(sortModel);
                 }

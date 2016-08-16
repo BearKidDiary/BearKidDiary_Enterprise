@@ -49,9 +49,9 @@
         <activity android:name=".ui.activity.StudentInfoActivity" />
         <activity android:name=".ui.activity.RequestActivity" />
         <activity android:name=".ui.activity.AskForLeaveActivity" />
-        <activity android:name=".ui.activity.AddEmployeeActivity" />
+        <activity android:name=".ui.activity.SendMsgActivity" />
         <activity android:name=".ui.activity.PersonalInfoEditActivity" />
-        <activity android:name=".ui.activity.MyQRCodeActivity"></activity>
+        <activity android:name=".ui.activity.MyQRCodeActivity" />
     </application>
 
 </manifest>

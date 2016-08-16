@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.model.QRCodeModel;
+import com.bearkiddiary.enterprise.ui.activity.MyQRCodeActivity;
 import com.bearkiddiary.enterprise.ui.activity.OrganizationMgmtActivity;
 import com.bearkiddiary.enterprise.ui.activity.PersonalInfoActivity;
 import com.bearkiddiary.enterprise.ui.activity.ResumeActivity;
@@ -83,6 +84,7 @@ public class IndividualFragment extends BaseFragment implements IIndividualFragm
                 QRCodeModel.scanQRCode(this, requestCode);
                 break;
             case R.id.rl_individual_qr_code://二维码
+                MyQRCodeActivity.startActivity(mContext);
                 break;
             case R.id.rl_individual_customer_service://客服中心
                 break;

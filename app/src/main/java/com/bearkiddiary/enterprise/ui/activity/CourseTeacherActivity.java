@@ -68,7 +68,20 @@ public class CourseTeacherActivity extends BaseActivity {
         //侧滑菜单的资源设置
         sideMenu.setSideMenuResourse(R.layout.item_course_side_menu);
         sideMenu.setOnClickMenuItemListener((v, postion) -> {
-
+            switch (v.getId()) {
+                case R.id.btn_course_roll_call://点名
+                    break;
+                case R.id.btn_course_mass://群发
+                    SendMsgActivity.startActivity(getContext(), SendMsgActivity.MASS);
+                    break;
+                case R.id.btn_course_add://添加学生
+                    SendMsgActivity.startActivity(getContext(), SendMsgActivity.ADD_STUDENT);
+                    break;
+                case R.id.btn_course_grade://评分
+                    break;
+                default:
+                    break;
+            }
         });
     }
 

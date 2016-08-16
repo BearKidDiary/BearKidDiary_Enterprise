@@ -32,18 +32,64 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@drawable/drawable_edit_normal"
-        android:padding="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:layout_marginRight="16dp"
+        android:background="@drawable/drawable_edit_normal"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <com.bearkiddiary.enterprise.ui.view.CircleImageview
+            android:id="@+id/iv_qrcode_avatar"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/avatar"/>
-    </LinearLayout>
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/tv_qrcode_name"
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_qrcode_avatar"
+            android:layout_toRightOf="@+id/iv_qrcode_avatar"
+            android:text="王大锤" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/male" />
+
+        <TextView
+            android:id="@+id/tv_qrcode_address"
+            style="@style/style_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_qrcode_name"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/iv_qrcode_avatar"
+            android:layout_toRightOf="@+id/iv_qrcode_avatar"
+            android:text="广东广州" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/iv_qrcode_avatar"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/bg_gray" />
+
+        <ImageView
+            android:id="@+id/iv_my_qrcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/divider" />
+    </RelativeLayout>
 </RelativeLayout>

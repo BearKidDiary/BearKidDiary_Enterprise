@@ -106,7 +106,7 @@ public class QRCodeModel {
     /**
      * 在二维码中间添加Logo图案
      */
-    private static Bitmap addLogo(Bitmap src, Bitmap logo) {
+    public static Bitmap addLogo(Bitmap src, Bitmap logo) {
         if (src == null) {
             return null;
         }

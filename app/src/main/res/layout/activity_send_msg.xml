@@ -6,7 +6,7 @@
     android:background="@color/bg_gray"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.bearkiddiary.enterprise.ui.activity.AddEmployeeActivity">
+    tools:context=".ui.activity.SendMsgActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/iv_title_back_add_employee"
+            android:id="@+id/iv_title_back_send_msg"
             android:layout_width="32dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
@@ -24,10 +24,10 @@
             android:src="@drawable/selector_title_back" />
 
         <TextView
+            android:id="@+id/tv_title_send_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/add_employee_title"
             android:textColor="@color/txt_title"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -35,67 +35,63 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
         <TextView
             style="@style/style_text_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/contact"/>
+            android:text="@string/contact" />
+
         <TextView
-            android:background="@drawable/drawable_edit_normal"
-            android:id="@+id/tv_add_employee_show"
+            android:id="@+id/tv_send_msg_show"
             style="@style/style_text_black"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:text="15626152111"/>
+            android:layout_weight="1"
+            android:background="@drawable/drawable_edit_normal"
+            android:padding="8dp" />
+
         <ImageView
-            android:id="@+id/iv_add_employee"
+            android:id="@+id/iv_send_msg"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:clickable="true"
-            android:src="@drawable/ic_me_add"/>
+            android:src="@drawable/ic_me_add" />
     </LinearLayout>
 
     <EditText
-        android:id="@+id/et_add_employee_content"
-        android:layout_weight="1"
+        android:id="@+id/et_send_msg_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/drawable_edit_normal"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/drawable_edit_normal"
+        android:gravity="top"
+        android:hint="@string/send_hint"
+        android:padding="8dp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp">
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp">
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/btn_send_msg"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/colorPrimary" />
+
         <TextView
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            android:text="@string/send_msg_hint"/>
-        <FrameLayout
+            style="@style/style_text_white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end">
-            <com.gc.materialdesign.views.ButtonFloat
-                android:id="@+id/btn_add_employee"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorPrimary" />
-            <TextView
-                style="@style/style_text_white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/send"
-                android:layout_gravity="center" />
-        </FrameLayout>
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:text="@string/send" />
+    </FrameLayout>
 </LinearLayout>
