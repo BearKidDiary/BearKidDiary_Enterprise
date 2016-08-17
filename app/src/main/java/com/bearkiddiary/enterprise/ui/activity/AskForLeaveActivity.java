@@ -13,6 +13,11 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
+/**
+ * Created by YarenChoi on 2016/8/1.
+ * 请假界面
+ */
+
 public class AskForLeaveActivity extends BaseActivity implements View.OnClickListener{
     private static final String TOAST_ERROR = "您选择的日期有误，请重新选择";
     private static final String TYPE_SICK = "病假";

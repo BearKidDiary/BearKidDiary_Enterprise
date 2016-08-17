@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 
+/**
+ * Created by YarenChoi on 2016/8/16.
+ * 发送信息界面
+ */
 public class SendMsgActivity extends BaseActivity implements View.OnClickListener{
     private static final String TYPE = "sendMsgType";
     public static final int ADD_EMPLOYEE = 0;//添加员工

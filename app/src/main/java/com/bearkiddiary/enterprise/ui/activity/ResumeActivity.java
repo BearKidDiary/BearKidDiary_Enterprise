@@ -12,6 +12,10 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.iactivity.IResumeView;
 
+/**
+ * Created by YarenChoi on 2016/7/27.
+ * 简历界面
+ */
 public class ResumeActivity extends BaseActivity implements IResumeView, View.OnClickListener{
     protected ImageView avatarIv;
     protected TextView nameTv;

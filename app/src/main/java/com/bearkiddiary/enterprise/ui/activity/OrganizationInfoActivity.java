@@ -10,6 +10,10 @@ import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
 
+/**
+ * Created by YarenChoi on 2016/7/24.
+ * 机构信息界面
+ */
 public class OrganizationInfoActivity extends BaseActivity implements View.OnClickListener{
     protected ImageView avatar;
     protected TextView name;

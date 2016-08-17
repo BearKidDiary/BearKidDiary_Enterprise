@@ -9,6 +9,10 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.utils.DateTimePickerUtil;
 
+/**
+ * Created by YarenChoi on 2016/7/27.
+ * 修改个人简历教育经历界面
+ */
 public class ResumeEditEduActivity extends BaseActivity {
     private static final int EDITEXP = 0;//编辑操作
     private static final int ADDEXP = 1;//新增操作
