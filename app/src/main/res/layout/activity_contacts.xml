@@ -31,6 +31,22 @@
             android:text="@string/contact_title"
             android:textColor="@color/txt_title"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_contacts_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:onClick="returnContacts"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:background="@drawable/selector_translucent"
+            android:text="@string/confirm"
+            android:textColor="@color/txt_title"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <LinearLayout
