@@ -130,7 +130,7 @@
     <string name="leave_start_time">开始时间</string>
     <string name="leave_type">请假类型</string>
     <string name="choose">请选择</string>
-    
+
     <string name="add_employee">添加员工</string>
     <string name="add_student">添加学生</string>
     <string name="mass">群发信息</string>
@@ -145,5 +145,8 @@
     <string name="personal_info_edit_email">修改邮箱信息</string>
     <string name="qrcode_title">我的二维码</string>
     <string name="course_mgmt">课程管理</string>
+    <string name="contact_title">联系人</string>
+    <string name="contacts_tab1">同事</string>
+    <string name="contacts_tab2">学生家长</string>
 
 </resources>

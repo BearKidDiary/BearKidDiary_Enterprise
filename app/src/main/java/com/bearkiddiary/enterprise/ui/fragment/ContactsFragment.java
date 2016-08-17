@@ -15,8 +15,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.adapter.KidsAdapter;
-import com.bearkiddiary.enterprise.model.bean.Kid;
+import com.bearkiddiary.enterprise.adapter.ContactsAdapter;
+import com.bearkiddiary.enterprise.model.bean.Contact;
+import com.bearkiddiary.enterprise.ui.activity.StudentInfoActivity;
 import com.bearkiddiary.enterprise.ui.view.ClearEditText;
 import com.bearkiddiary.enterprise.ui.view.SideBar;
 import com.bearkiddiary.enterprise.utils.PinyinUtils;
@@ -31,45 +32,55 @@ import java.util.List;
  */
 
 @SuppressLint("ValidFragment")
-public class StudentsFragment extends BaseFragment {
-    public static final int GRADUATED = 0;
-    public static final int ASSIGNED = 1;
-    public static final int UNASSIGNED = 2;
+public class ContactsFragment extends BaseFragment {
+
+    public static final int GRADUATED = 0;//已毕业学生
+    public static final int ASSIGNED = 1;//已有班级学生
+    public static final int UNASSIGNED = 2;//未有班级学生
+    public static final int COLLEAGUE = 3;//同事
+    public static final int PARENTS = 4;//学生家长
+
     protected int type;
+    private static final String TYPE = "contactsType";
 
     private Context mContext;
     protected ClearEditText mClearEditText;//搜索框
     protected SideBar sideBar;//联系人的字母标识栏
-    protected RecyclerView rv_students;
-    protected TextView tv_students_dialog;
-    protected List<Kid> studentsList;//联系人列表
+    protected RecyclerView rv_contacts;
+    protected TextView tv_contacts_dialog;
+    protected List<Contact> contactsList;//联系人列表
 
-    public KidsAdapter adapter;
+    public ContactsAdapter adapter;
 
-    public StudentsFragment(int type) {
-        this.type = type;
+    public static ContactsFragment newInstance(int type) {
+        ContactsFragment contactsFragment = new ContactsFragment();
+        Bundle fragmentArgs = new Bundle();
+        fragmentArgs.putInt(TYPE, type);
+        contactsFragment.setArguments(fragmentArgs);
+        return contactsFragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_students, container, false);
+        View view = inflater.inflate(R.layout.fragment_contacts, container, false);
         mContext = inflater.getContext();
+        type = getArguments().getInt(TYPE, GRADUATED);
         initView(view);
         return view;
     }
 
     private void initView(View view) {
-        sideBar = (SideBar) view.findViewById(R.id.sideBar_students);
+        sideBar = (SideBar) view.findViewById(R.id.sideBar_contacts);
         mClearEditText = (ClearEditText) view.findViewById(R.id.et_filter);
-        tv_students_dialog = (TextView) view.findViewById(R.id.tv_students_dialog);
-        rv_students = (RecyclerView) view.findViewById(R.id.rv_students);
+        tv_contacts_dialog = (TextView) view.findViewById(R.id.tv_contacts_dialog);
+        rv_contacts = (RecyclerView) view.findViewById(R.id.rv_contacts);
 
-        sideBar.setTextView(tv_students_dialog);
+        sideBar.setTextView(tv_contacts_dialog);
         //设置SideBar监听
         sideBar.setOnTouchingLetterChangedListener(s -> {
             //该字母首次出现的位置
             int position = adapter.getPositionForSection(s.charAt(0));
-            rv_students.scrollToPosition(position);
+            rv_contacts.scrollToPosition(position);
         });
 
         //根据输入框输入值的改变来过滤搜索
@@ -91,15 +102,28 @@ public class StudentsFragment extends BaseFragment {
             }
         });
 
-        adapter = new KidsAdapter(mContext);
+        adapter = new ContactsAdapter(mContext);
+        setOnItemClickListener();
         //学生列表
-        rv_students.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv_students.setItemAnimator(new DefaultItemAnimator());
-        rv_students.setAdapter(adapter);
+        rv_contacts.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv_contacts.setItemAnimator(new DefaultItemAnimator());
+        rv_contacts.setAdapter(adapter);
 
         //获取到联系人列表，String[] names
-        studentsList = filledData(getResources().getStringArray(R.array.names));
-        adapter.refreshData(studentsList);
+        contactsList = filledData(getResources().getStringArray(R.array.names));
+        adapter.refreshData(contactsList);
+    }
+
+    private void setOnItemClickListener() {
+        switch (type) {
+            case GRADUATED:
+            case ASSIGNED:
+            case UNASSIGNED:
+                adapter.setOnItemClickListener(v -> StudentInfoActivity.startActivity(mContext));
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -108,12 +132,12 @@ public class StudentsFragment extends BaseFragment {
      * @param date 名字数据
      * @return 过滤后的数组
      */
-    private List<Kid> filledData(String [] date){
-        List<Kid> mSortList = new ArrayList<>();
+    private List<Contact> filledData(String [] date){
+        List<Contact> mSortList = new ArrayList<>();
 
         for (String aDate : date) {
-            Kid sortModel = new Kid();
-            sortModel.setKname(aDate);
+            Contact sortModel = new Contact();
+            sortModel.setName(aDate);
             //汉字转换成拼音
             String pinyin = PinyinUtils.getPingYin(aDate);
             String sortString = pinyin.substring(0, 1).toUpperCase();
@@ -138,14 +162,14 @@ public class StudentsFragment extends BaseFragment {
      * @param filterStr 输入框中的字符串
      */
     private void filterData(String filterStr){
-        List<Kid> filterDateList = new ArrayList<>();
+        List<Contact> filterDateList = new ArrayList<>();
 
         if(TextUtils.isEmpty(filterStr)){
-            filterDateList = studentsList;
+            filterDateList = contactsList;
         }else{
             filterDateList.clear();
-            for(Kid sortModel : studentsList){
-                String name = sortModel.getKname();
+            for(Contact sortModel : contactsList){
+                String name = sortModel.getName();
                 if(name.contains(filterStr) || PinyinUtils.getPingYin(name).startsWith(filterStr)){
                     filterDateList.add(sortModel);
                 }
