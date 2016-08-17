@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.activity.CourseTeacherActivity;
 import com.bearkiddiary.enterprise.ui.activity.ExaminationActivity;
+import com.bearkiddiary.enterprise.ui.activity.RequestActivity;
 import com.bearkiddiary.enterprise.ui.activity.StaffActivity;
 import com.bearkiddiary.enterprise.ui.activity.StudentsActivity;
 import com.bearkiddiary.enterprise.ui.activity.WorkAttendanceActivity;
@@ -131,6 +132,7 @@ public class OrganizationFragment extends BaseFragment {
             case R.id.btn_org_contact://联系人
                 break;
             case R.id.btn_org_request://申请
+                RequestActivity.startActivity(getContext());
                 break;
             case R.id.btn_org_sign://签到
                 break;

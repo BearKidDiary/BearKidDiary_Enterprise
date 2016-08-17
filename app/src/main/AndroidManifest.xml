@@ -7,6 +7,11 @@
     <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- 扫描二维码需要相机相关权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <application
         android:name=".global.BaseApplication"
         android:allowBackup="true"
@@ -43,6 +48,12 @@
         <activity android:name=".ui.activity.GradeKidActivity"></activity>
         <activity android:name=".ui.activity.ExaminationActivity" />
         <activity android:name=".ui.activity.StudentsActivity" />
+        <activity android:name=".ui.activity.StudentInfoActivity" />
+        <activity android:name=".ui.activity.RequestActivity" />
+        <activity android:name=".ui.activity.AskForLeaveActivity" />
+        <activity android:name=".ui.activity.SendMsgActivity" />
+        <activity android:name=".ui.activity.PersonalInfoEditActivity" />
+        <activity android:name=".ui.activity.MyQRCodeActivity" />
     </application>
 
 </manifest>

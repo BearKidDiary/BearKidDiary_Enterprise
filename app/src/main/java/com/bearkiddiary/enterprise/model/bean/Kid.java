@@ -1,6 +1,6 @@
 package com.bearkiddiary.enterprise.model.bean;
 
-public class Kid {
+public class Kid implements Comparable {
     public static final String NAME = "Kname";
     public static final String SEX = "Ksex";
     public static final String BIRTHDAY = "Kbirthday";
@@ -15,6 +15,7 @@ public class Kid {
     //private Family family;
     private String Kavatar;
     //private BmobRelation Ktimeline;
+    private String pingyin;
 
 
     public String getKname() {
@@ -55,5 +56,27 @@ public class Kid {
 
     public void setKavatar(String kavatar) {
         Kavatar = kavatar;
+    }
+
+    public String getPingyin() {
+        return pingyin;
+    }
+
+    public void setPingyin(String pingyin) {
+        this.pingyin = pingyin;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (pingyin.equals("@")
+                || ((Kid)o).getPingyin().equals("#")) {
+            return -1;
+        } else if (pingyin.equals("#")
+                || ((Kid)o).getPingyin().equals("@")) {
+            return 1;
+        }else {
+            return pingyin.compareToIgnoreCase(((Kid)o).getPingyin());
+        }
+
     }
 }

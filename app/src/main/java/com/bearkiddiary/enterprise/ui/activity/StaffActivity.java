@@ -2,9 +2,6 @@ package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -61,6 +58,7 @@ public class StaffActivity extends BaseActivity {
         sideMenu.setOnClickMenuItemListener((v, postion) -> {
             switch (v.getId()) {
                 case R.id.btn_staff_add://添加员工
+                    SendMsgActivity.startActivity(getContext(), SendMsgActivity.ADD_EMPLOYEE);
                     break;
                 case R.id.btn_staff_grade://等级评价
                     GradeTeacherActivity.startActivity(getContext());

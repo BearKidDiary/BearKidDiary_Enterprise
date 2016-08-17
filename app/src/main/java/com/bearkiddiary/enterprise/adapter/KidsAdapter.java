@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bearkiddiary.enterprise.R;
-import com.bearkiddiary.enterprise.model.bean.Students;
+import com.bearkiddiary.enterprise.model.bean.Kid;
+import com.bearkiddiary.enterprise.ui.activity.StudentInfoActivity;
 import com.bearkiddiary.enterprise.ui.view.CircleImageview;
 
 import java.util.List;
@@ -19,11 +19,11 @@ import java.util.List;
  * Created by YarenChoi on 2016/8/8.
  * 学生列表适配器
  */
-public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHolder> {
-    private List<Students> dataList;
+public class KidsAdapter extends RecyclerView.Adapter<KidsAdapter.ViewHolder> {
+    private List<Kid> dataList;
     private Context mContext;
 
-    public StudentsAdapter(Context mContext) {
+    public KidsAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
@@ -37,7 +37,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.root.setTag(position);
         holder.root.setOnClickListener(v ->
-                Toast.makeText(mContext, dataList.get((int) v.getTag()).getName(), Toast.LENGTH_SHORT).show());
+                StudentInfoActivity.startActivity(mContext));
 
         //根据position获取分类的首字母的Char ascii值
         int section = getSectionForPosition(position);
@@ -50,7 +50,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
             holder.tv_letter.setVisibility(View.GONE);
         }
 
-        holder.tv_name.setText(this.dataList.get(position).getName());
+        holder.tv_name.setText(this.dataList.get(position).getKname());
         holder.iv_avatar.setImageResource(R.drawable.avatar);
     }
 
@@ -68,7 +68,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
      *
      * @param dataList 新的数据列表
      */
-    public void refreshData(List<Students> dataList) {
+    public void refreshData(List<Kid> dataList) {
         this.dataList = dataList;
         notifyDataSetChanged();
     }

@@ -59,6 +59,7 @@ public class ResumeEditInfoActivity extends BaseActivity {
         });
 
         nameEt.setText(getIntent().getStringExtra(NAME));
+        nameEt.setSelection(getIntent().getStringExtra(NAME).length());
         addressEt.setText(getIntent().getStringExtra(ADDRESS));
         majorEt.setText(getIntent().getStringExtra(MAJOR));
 

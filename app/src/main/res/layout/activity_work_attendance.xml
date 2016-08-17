@@ -61,7 +61,7 @@
                 android:id="@+id/iv_work_attendance_tab1"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@color/color_red_light"
+                android:background="@color/tab_choose"
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
 
@@ -94,7 +94,7 @@
                 android:id="@+id/iv_work_attendance_tab2"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@color/color_red_light"
+                android:background="@color/tab_choose"
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
 

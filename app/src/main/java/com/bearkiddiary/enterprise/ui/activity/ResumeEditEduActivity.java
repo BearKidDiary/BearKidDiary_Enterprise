@@ -58,6 +58,7 @@ public class ResumeEditEduActivity extends BaseActivity {
 
         } else if (opType == EDITEXP) {
             et_school.setText(getIntent().getStringExtra(SCHOOL));
+            et_school.setSelection(getIntent().getStringExtra(SCHOOL).length());
             et_major.setText(getIntent().getStringExtra(MAJOR));
             et_desc.setText(getIntent().getStringExtra(DESC));
         }

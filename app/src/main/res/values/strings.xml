@@ -87,10 +87,63 @@
     <string name="examination">审批</string>
     <string name="unexamined">未审批</string>
     <string name="examined">已同意</string>
+
     <string name="student_title">学生</string>
     <string name="student_tab1">已毕业</string>
     <string name="student_tab2">已有班级</string>
     <string name="student_tab3">未有班级</string>
     <string name="hint_contact">请输入关键字</string>
+
+    <string name="student_info_title">学生信息</string>
+    <string name="student_info_words">留言</string>
+    <string name="student_info_height">身高</string>
+    <string name="student_info_guardian">监护人</string>
+    <string name="student_info_show">风采展示</string>
+    <string name="student_info_weight">体重</string>
+    <string name="student_info_vision">视力</string>
+    <string name="student_info_birthday">生日</string>
+    <string name="student_info_gender">性别</string>
+    <string name="student_info_flowers">累计小红花</string>
+    <string name="student_info_grade">最近成绩</string>
+    <string name="student_info_judgement">评价：</string>
+    <string name="student_info_body_data">身体数据</string>
+
+    <string name="request_title">申请</string>
+    <string name="request_tab1">申请模板</string>
+    <string name="request_tab2">我的申请</string>
+
+    <string name="request_module_1">请假</string>
+    <string name="request_module_2">新设课程</string>
+    <string name="request_module_3">报销</string>
+    <string name="request_module_4">立项申请</string>
+    <string name="request_module_5">调课报备</string>
+    <string name="request_module_6">绩效自评</string>
+    <string name="request_module_7">离职</string>
+    <string name="request_module_8">通用审批</string>
+
+    <string name="ask_for_leave_title">请假</string>
+    <string name="leave_submit">提交</string>
+    <string name="leave_approver">审批人</string>
+    <string name="leave_reason">请假原因</string>
+    <string name="leave_day">请假天数</string>
+    <string name="leave_end_time">结束时间</string>
+    <string name="leave_start_time">开始时间</string>
+    <string name="leave_type">请假类型</string>
+    <string name="choose">请选择</string>
+    
+    <string name="add_employee">添加员工</string>
+    <string name="add_student">添加学生</string>
+    <string name="mass">群发信息</string>
+    <string name="contact">联系人</string>
+    <string name="send">发送</string>
+    <string name="send_hint">请在此处填写信息内容</string>
+
+    <string name="confirm">确认</string>
+    <string name="personal_info_edit_name">修改用户名信息</string>
+    <string name="personal_info_edit_gender">修改性别信息</string>
+    <string name="personal_info_edit_address">修改地址信息"</string>
+    <string name="personal_info_edit_email">修改邮箱信息</string>
+    <string name="qrcode_title">我的二维码</string>
+    <string name="course_mgmt">课程管理</string>
 
 </resources>
