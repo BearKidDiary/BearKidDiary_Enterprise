@@ -10,6 +10,10 @@ import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.model.QRCodeModel;
 import com.bearkiddiary.enterprise.utils.ScreenMetricsUtil;
 
+/**
+ * Created by YarenChoi on 2016/8/15.
+ * 我的二维码界面
+ */
 public class MyQRCodeActivity extends BaseActivity {
     protected ImageView avatar;
     protected ImageView qrcode;

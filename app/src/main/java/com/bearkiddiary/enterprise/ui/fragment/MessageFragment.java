@@ -14,7 +14,7 @@ import com.bearkiddiary.enterprise.ui.view.RefreshRecyclerView;
 
 
 /**
- * Created by admin on 2016/7/22.
+ * Created by YarenChoi on 2016/7/22.
  * 动态界面
  */
 public class MessageFragment extends BaseFragment {

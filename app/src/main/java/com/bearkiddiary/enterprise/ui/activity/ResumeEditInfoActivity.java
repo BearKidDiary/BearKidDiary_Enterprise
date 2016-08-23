@@ -9,6 +9,10 @@ import android.widget.ImageView;
 
 import com.bearkiddiary.enterprise.R;
 
+/**
+ * Created by YarenChoi on 2016/7/27.
+ * 修改个人简历个人信息界面
+ */
 public class ResumeEditInfoActivity extends BaseActivity {
     private static final String NAME = "name";
     private static final String GENDER = "gender";

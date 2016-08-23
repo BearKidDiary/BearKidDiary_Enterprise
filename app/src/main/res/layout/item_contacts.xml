@@ -6,45 +6,38 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_students_letter_title"
+        android:id="@+id/tv_contacts_letter_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_light"
-        android:paddingBottom="5dp"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
-        android:text="A"
+        android:padding="5dp"
         android:textColor="#454545" />
 
     <RelativeLayout
-        android:id="@+id/rl_students_root"
+        android:id="@+id/rl_contacts_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_translucent_white"
         android:minHeight="64dp">
 
-
         <com.bearkiddiary.enterprise.ui.view.CircleImageview
-            android:id="@+id/iv_students_avatar"
+            android:id="@+id/iv_contacts_avatar"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/avatar" />
-
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp" />
 
         <TextView
+            android:id="@+id/tv_contacts_name"
             style="@style/style_text_black"
-            android:id="@+id/tv_students_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/iv_students_avatar"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:text="hhhh" />
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@id/iv_contacts_avatar"
+            android:layout_toEndOf="@+id/iv_contacts_avatar" />
     </RelativeLayout>
-
 </LinearLayout>

@@ -9,6 +9,10 @@ import android.widget.ImageView;
 
 import com.bearkiddiary.enterprise.R;
 
+/**
+ * Created by YarenChoi on 2016/7/27.
+ * 修改个人简历专长界面
+ */
 public class ResumeEditSpecActivity extends BaseActivity {
     private static final String SPEC = "spec";
 

@@ -18,6 +18,10 @@ import com.bearkiddiary.enterprise.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by YarenChoi on 2016/8/10.
+ * 申请界面
+ */
 public class RequestActivity extends BaseActivity implements View.OnClickListener{
     private static final int TABONE = 0;
     private static final int TABTWO = 1;
