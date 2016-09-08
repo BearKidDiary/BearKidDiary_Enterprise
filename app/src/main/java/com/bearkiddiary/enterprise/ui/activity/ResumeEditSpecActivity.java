@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.bearkiddiary.enterprise.R;
 
@@ -28,10 +27,8 @@ public class ResumeEditSpecActivity extends BaseActivity {
     private void initView() {
         specEt = (EditText) findViewById(R.id.et_resume_spec);
 
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_resume_edit_spec);
         Button save = (Button) findViewById(R.id.btn_resume_spec_save);
 
-        back.setOnClickListener(view -> finish());
         save.setOnClickListener(view -> {
 
         });

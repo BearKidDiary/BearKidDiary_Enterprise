@@ -49,7 +49,6 @@ public class AskForLeaveActivity extends BaseActivity implements View.OnClickLis
         et_reason = (EditText) findViewById(R.id.et_leave_reason);
         iv_add = (ImageView) findViewById(R.id.iv_leave_add_approver);
 
-        findViewById(R.id.iv_title_back_leave).setOnClickListener(this);
         findViewById(R.id.ll_leave_type).setOnClickListener(this);
         findViewById(R.id.ll_leave_start_time).setOnClickListener(this);
         findViewById(R.id.ll_leave_end_time).setOnClickListener(this);
@@ -66,9 +65,6 @@ public class AskForLeaveActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_title_back_leave:
-                finish();
-                break;
             case R.id.ll_leave_type://请假类型
                 showDialog();
                 break;

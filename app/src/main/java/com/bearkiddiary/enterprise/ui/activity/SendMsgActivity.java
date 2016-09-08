@@ -36,7 +36,6 @@ public class SendMsgActivity extends BaseActivity implements View.OnClickListene
         content = (EditText) findViewById(R.id.et_send_msg_content);
         showContact = (TextView) findViewById(R.id.tv_send_msg_show);
 
-        findViewById(R.id.iv_title_back_send_msg).setOnClickListener(this);
         findViewById(R.id.iv_send_msg).setOnClickListener(this);
         findViewById(R.id.btn_send_msg).setOnClickListener(this);
 
@@ -58,9 +57,6 @@ public class SendMsgActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_title_back_send_msg:
-                finish();
-                break;
             case R.id.iv_send_msg://添加联系人
                 break;
             case R.id.btn_send_msg://发送信息

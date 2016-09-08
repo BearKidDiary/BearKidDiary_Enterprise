@@ -52,14 +52,12 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
         ll_edu = (LinearLayout) findViewById(R.id.ll_resume_education);
         specialtiesTv = (TextView) findViewById(R.id.tv_resume_specialties);
 
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_resume);
         TextView editInfoTv = (TextView) findViewById(R.id.tv_resume_edit_info);
         TextView editContactTv = (TextView) findViewById(R.id.tv_resume_edit_contact);
         TextView editSpecialtiesTv = (TextView) findViewById(R.id.tv_resume_edit_specialties);
         TextView addWorkExp = (TextView) findViewById(R.id.tv_resume_add_work_exp);
         TextView addEduExp = (TextView) findViewById(R.id.tv_resume_add_edu_exp);
 
-        back.setOnClickListener(this);
         editInfoTv.setOnClickListener(this);
         editContactTv.setOnClickListener(this);
         editSpecialtiesTv.setOnClickListener(this);
@@ -81,9 +79,6 @@ public class ResumeActivity extends BaseActivity implements IResumeView, View.On
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.iv_title_back_resume:
-                finish();
-                break;
             case R.id.tv_resume_edit_info:
                 int gender = ResumeEditInfoActivity.MALE;
                 ResumeEditInfoActivity.startActivity(ResumeActivity.this,

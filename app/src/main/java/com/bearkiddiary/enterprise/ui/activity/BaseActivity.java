@@ -76,4 +76,8 @@ public class BaseActivity extends AppCompatActivity implements IBaseView {
                 manager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
     }
+
+    public void back(View view) {
+        finish();
+    }
 }

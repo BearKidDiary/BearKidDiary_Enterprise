@@ -24,7 +24,6 @@ public class CourseTeacherActivity extends BaseActivity {
 
     private SideMenu sideMenu;
     private RecyclerView rv_course;
-    private ImageView iv_back;
     private IconButton ib_menu;
     private CourseAdapter mAdapter;
 
@@ -39,11 +38,7 @@ public class CourseTeacherActivity extends BaseActivity {
     private void initView() {
         sideMenu = (SideMenu) findViewById(R.id.sidemenu_course);
         rv_course = (RecyclerView) findViewById(R.id.rv_course);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
         ib_menu = (IconButton) findViewById(R.id.ib_course_menu);
-
-        //点击标题栏返回键
-        iv_back.setOnClickListener(v -> finish());
 
         //点击标题栏菜单键
         ib_menu.setOnClickListener(v -> {

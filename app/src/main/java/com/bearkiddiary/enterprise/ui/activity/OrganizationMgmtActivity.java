@@ -38,11 +38,8 @@ public class OrganizationMgmtActivity extends BaseActivity {
     }
 
     private void initView() {
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_organization_mgmt);
         IconButton addBtn = (IconButton) findViewById(R.id.ibtn_organization_mgmt);
         RecyclerView rvOrganization = (RecyclerView) findViewById(R.id.rv_organization);
-
-        back.setOnClickListener(view -> finish());
 
         addBtn.setOnClickListener(view -> popupMenu.show());
         popupMenu = new PopupMenu(getContext(), addBtn);

@@ -2,12 +2,11 @@ package com.bearkiddiary.enterprise.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.bearkiddiary.enterprise.R;
 
-public class GradeKidActivity extends AppCompatActivity {
+public class GradeKidActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -27,7 +27,6 @@ public class TagEditActivity extends BaseActivity implements ITagEditView {
     private Button btn_delete;
     private EditText et_name;
     private RecyclerView rv_member;
-    private ImageView iv_back;
     private TagMemberAdapter mAdapter;
 
     @Override
@@ -45,10 +44,6 @@ public class TagEditActivity extends BaseActivity implements ITagEditView {
         btn_member_delete = (IconButton) findViewById(R.id.btn_tag_member_delete);
         et_name = (EditText) findViewById(R.id.et_tag_name);
         rv_member = (RecyclerView) findViewById(R.id.rv_tag_member);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-
-        //点击标题栏返回键
-        iv_back.setOnClickListener(v -> finish());
 
         //点击标题栏保存键
         btn_add.setOnClickListener(v -> {

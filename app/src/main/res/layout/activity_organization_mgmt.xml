@@ -14,7 +14,6 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/iv_title_back_organization_mgmt"
             android:layout_width="32dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
@@ -22,7 +21,7 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:src="@drawable/selector_title_back"
-            android:clickable="true"/>
+            android:onClick="back"/>
 
 
         <TextView

@@ -39,7 +39,6 @@ public class ResumeEditEduActivity extends BaseActivity {
     }
 
     private void initView() {
-        this.findViewById(R.id.iv_title_back_resume_edit_edu).setOnClickListener(view -> finish());
 
         tv_start_date = (TextView) this.findViewById(R.id.tv_resume_edu_start_date);
         tv_end_date = (TextView) this.findViewById(R.id.tv_resume_edu_end_date);

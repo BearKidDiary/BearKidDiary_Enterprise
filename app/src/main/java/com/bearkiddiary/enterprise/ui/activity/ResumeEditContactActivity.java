@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.bearkiddiary.enterprise.R;
 
@@ -34,10 +33,8 @@ public class ResumeEditContactActivity extends BaseActivity {
         emailEt = (EditText) findViewById(R.id.et_resume_mail);
         qqEt = (EditText) findViewById(R.id.et_resume_qq);
 
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_resume_edit_contact);
         Button save = (Button) findViewById(R.id.btn_resume_contact_save);
 
-        back.setOnClickListener(view -> finish());
         save.setOnClickListener(view -> {
 
         });

@@ -49,7 +49,6 @@ public class PersonalInfoEditActivity extends BaseActivity implements View.OnCli
         btn_male = (Button) findViewById(R.id.btn_personal_info_gender_male);
         btn_female = (Button) findViewById(R.id.btn_personal_info_gender_female);
 
-        this.findViewById(R.id.iv_title_back).setOnClickListener(this);
         this.findViewById(R.id.tv_personal_info_confirm).setOnClickListener(this);
         iv_clear.setOnClickListener(this);
         btn_male.setOnClickListener(this);
@@ -90,9 +89,6 @@ public class PersonalInfoEditActivity extends BaseActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_title_back:
-                finish();
-                break;
             case R.id.tv_personal_info_confirm://确认修改操作
                 break;
             case R.id.iv_personal_info_clear:

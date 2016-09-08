@@ -22,7 +22,6 @@ public class TagActivity extends BaseActivity {
 
     private RecyclerView rv_tag;
     private ButtonFlat btn_add;
-    private ImageView iv_back;
     private TagAdapter mAdapter;
 
     @Override
@@ -36,10 +35,6 @@ public class TagActivity extends BaseActivity {
     private void initView() {
         rv_tag = (RecyclerView) findViewById(R.id.rv_tag);
         btn_add = (ButtonFlat) findViewById(R.id.btn_tag_add);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-
-        //点击标题栏返回键
-        iv_back.setOnClickListener(v -> finish());
 
         //点击标题栏添加键
         btn_add.setOnClickListener(v -> {

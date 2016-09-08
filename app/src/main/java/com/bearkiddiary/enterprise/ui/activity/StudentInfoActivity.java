@@ -39,7 +39,6 @@ public class StudentInfoActivity extends BaseFragmentActivity {
 
     @Override
     protected void setUpView() {
-        findViewById(R.id.iv_title_back_student_info).setOnClickListener(v -> finish());
         rl_tab1.setOnClickListener(view -> changeTab(TABONE));
         rl_tab2.setOnClickListener(view -> changeTab(TABTWO));
     }

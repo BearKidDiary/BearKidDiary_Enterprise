@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bearkiddiary.enterprise.R;
@@ -19,7 +18,6 @@ public class GradeTeacherActivity extends BaseActivity {
 
     private TextView tv_late, tv_leave, tv_communicate, tv_upload, tv_students;
     private RecyclerView rv_teacher;
-    private ImageView iv_back;
     private GradeTeacherAdapter mAdapter;
 
     @Override
@@ -37,10 +35,6 @@ public class GradeTeacherActivity extends BaseActivity {
         tv_communicate = (TextView) findViewById(R.id.tv_grade_communicate);
         tv_upload = (TextView) findViewById(R.id.tv_grade_upload);
         tv_students = (TextView) findViewById(R.id.tv_grade_students);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-
-        //点击标题栏返回键
-        iv_back.setOnClickListener(v -> finish());
 
         //教师列表
         rv_teacher.setAdapter(mAdapter = new GradeTeacherAdapter());

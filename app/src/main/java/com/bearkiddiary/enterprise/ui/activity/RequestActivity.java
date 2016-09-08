@@ -43,7 +43,6 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void initView() {
-        findViewById(R.id.iv_title_back_request).setOnClickListener(this);
         findViewById(R.id.rl_request_tab1).setOnClickListener(this);
         findViewById(R.id.rl_request_tab2).setOnClickListener(this);
         iv_tab[TABONE] = (ImageView) findViewById(R.id.iv_request_tab1);
@@ -91,9 +90,6 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.iv_title_back_request:
-                finish();
-                break;
             case R.id.rl_request_tab1:
                 changeTab(TABONE);
                 break;

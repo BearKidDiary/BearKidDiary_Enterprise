@@ -31,14 +31,12 @@ public class OrganizationInfoActivity extends BaseActivity implements View.OnCli
         name = (TextView) findViewById(R.id.tv_organization_info_name);
         createTime = (TextView) findViewById(R.id.tv_organization_info_time);
 
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_organization_info);
         LinearLayout info = (LinearLayout) findViewById(R.id.ll_organization_info);
         TextView home = (TextView) findViewById(R.id.tv_organization_info_home);
         TextView employee = (TextView) findViewById(R.id.tv_organization_info_employee);
         TextView qr_code = (TextView) findViewById(R.id.tv_organization_info_qr_code);
         TextView identification = (TextView) findViewById(R.id.tv_organization_info_identification);
 
-        back.setOnClickListener(this);
         info.setOnClickListener(this);
         home.setOnClickListener(this);
         employee.setOnClickListener(this);
@@ -49,9 +47,6 @@ public class OrganizationInfoActivity extends BaseActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.iv_title_back_organization_info:
-                finish();
-                break;
             case R.id.ll_organization_info:
                 break;
             case R.id.tv_organization_info_home:

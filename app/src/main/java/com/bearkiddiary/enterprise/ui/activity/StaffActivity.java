@@ -20,7 +20,6 @@ public class StaffActivity extends BaseActivity {
 
     private RecyclerView rv_staff;
     private IconButton ib_menu;
-    private ImageView iv_back;
     private SideMenu sideMenu;
     private StaffAdapter mAdapter;
 
@@ -34,12 +33,8 @@ public class StaffActivity extends BaseActivity {
 
     private void initView() {
         rv_staff = (RecyclerView) findViewById(R.id.rv_staff);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
         ib_menu = (IconButton) findViewById(R.id.ib_stuff_menu);
         sideMenu = (SideMenu) findViewById(R.id.sidemenu_stuff);
-
-        //点击标题栏返回键
-        iv_back.setOnClickListener(view -> finish());
 
         //点击标题栏菜单键
         ib_menu.setOnClickListener(view -> {

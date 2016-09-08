@@ -13,7 +13,6 @@ import com.bearkiddiary.enterprise.R;
 import com.bearkiddiary.enterprise.ui.fragment.ContactsFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by YarenChoi on 2016/8/16.
@@ -46,7 +45,6 @@ public class ContactsActivity extends BaseFragmentActivity {
 
     @Override
     protected void setUpView() {
-        findViewById(R.id.iv_title_back_contacts).setOnClickListener(view -> finish());
         rl_tab1.setOnClickListener(view -> changeTab(TABONE));
         rl_tab2.setOnClickListener(view -> changeTab(TABTWO));
     }

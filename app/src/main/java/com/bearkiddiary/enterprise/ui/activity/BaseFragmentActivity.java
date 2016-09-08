@@ -67,6 +67,10 @@ public abstract class BaseFragmentActivity extends BaseActivity{
         selected = tabNum;
     }
 
+    public void back(View view) {
+        finish();
+    }
+
     /**
      * 初始化界面，获取控件操作
      */

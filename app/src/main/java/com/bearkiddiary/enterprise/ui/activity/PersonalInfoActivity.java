@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,7 +16,6 @@ import com.bearkiddiary.enterprise.R;
  */
 public class PersonalInfoActivity extends BaseActivity implements View.OnClickListener{
 
-    protected ImageView back;
     protected RelativeLayout avatarRL;
     protected LinearLayout nameLL;
     protected LinearLayout genderLL;
@@ -37,7 +35,6 @@ public class PersonalInfoActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initView() {
-        back = (ImageView) findViewById(R.id.iv_title_back_personal_info);
         avatarRL = (RelativeLayout) findViewById(R.id.rl_personal_info_avatar);
         nameLL = (LinearLayout) findViewById(R.id.ll_personal_info_name);
         genderLL = (LinearLayout) findViewById(R.id.ll_personal_info_gender);
@@ -50,7 +47,6 @@ public class PersonalInfoActivity extends BaseActivity implements View.OnClickLi
         tv_address = (TextView) findViewById(R.id.tv_personal_info_address);
         tv_email = (TextView) findViewById(R.id.tv_personal_info_email);
 
-        back.setOnClickListener(this);
         avatarRL.setOnClickListener(this);
         nameLL.setOnClickListener(this);
         genderLL.setOnClickListener(this);
@@ -62,9 +58,6 @@ public class PersonalInfoActivity extends BaseActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.iv_title_back_personal_info:
-                finish();
-                break;
             case R.id.rl_personal_info_avatar://修改头像
                 break;
             case R.id.ll_personal_info_name://修改姓名
@@ -72,28 +65,24 @@ public class PersonalInfoActivity extends BaseActivity implements View.OnClickLi
                         PersonalInfoActivity.this,
                         PersonalInfoEditActivity.TYPE_NAME,
                         tv_name.getText().toString());
-//                expandView(nameEditLL);
                 break;
             case R.id.ll_personal_info_gender://修改性别
                 PersonalInfoEditActivity.startActivity(
                         PersonalInfoActivity.this,
                         PersonalInfoEditActivity.TYPE_GENDER,
                         tv_gender.getText().toString());
-//                expandView(genderEditLL);
                 break;
             case R.id.ll_personal_info_address://修改地址
                 PersonalInfoEditActivity.startActivity(
                         PersonalInfoActivity.this,
                         PersonalInfoEditActivity.TYPE_ADDRESS,
                         tv_address.getText().toString());
-//                expandView(addressEditLL);
                 break;
             case R.id.ll_personal_info_email://修改Email
                 PersonalInfoEditActivity.startActivity(
                         PersonalInfoActivity.this,
                         PersonalInfoEditActivity.TYPE_EMAIL,
                         tv_email.getText().toString());
-//                expandView(emailEditLL);
                 break;
             default:
                 break;

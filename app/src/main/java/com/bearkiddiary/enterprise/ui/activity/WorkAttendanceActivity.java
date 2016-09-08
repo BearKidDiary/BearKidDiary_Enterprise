@@ -46,7 +46,6 @@ public class WorkAttendanceActivity extends BaseFragmentActivity {
 
     @Override
     protected void setUpView() {
-        findViewById(R.id.iv_title_back_attendance).setOnClickListener(view -> finish());
         rl_tab1.setOnClickListener(view -> changeTab(TABONE));
         rl_tab2.setOnClickListener(view -> changeTab(TABTWO));
     }

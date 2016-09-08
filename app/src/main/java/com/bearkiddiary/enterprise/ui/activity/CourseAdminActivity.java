@@ -27,7 +27,6 @@ import java.util.List;
 public class CourseAdminActivity extends BaseActivity implements ICourseView {
 
     private RecyclerView rv_course;
-    private ImageView iv_back;
     private CourseAdapter mAdapter;
 
     private List<Kid> kids = new ArrayList<>();
@@ -43,10 +42,6 @@ public class CourseAdminActivity extends BaseActivity implements ICourseView {
 
     private void initView() {
         rv_course = (RecyclerView) findViewById(R.id.rv_course);
-        iv_back = (ImageView) findViewById(R.id.iv_back);
-
-        //标题栏返回键
-        iv_back.setOnClickListener(view -> finish());
 
         //课程对应班级信息的列表 包括任课老师、时间地点、学生名单
         rv_course.setLayoutManager(new LinearLayoutManager(getContext()));

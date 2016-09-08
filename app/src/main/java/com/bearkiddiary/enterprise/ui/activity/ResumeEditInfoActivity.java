@@ -44,10 +44,8 @@ public class ResumeEditInfoActivity extends BaseActivity {
         addressEt = (EditText) findViewById(R.id.et_resume_address);
         majorEt = (EditText) findViewById(R.id.et_resume_major);
 
-        ImageView back = (ImageView) findViewById(R.id.iv_title_back_resume_edit_info);
         Button save = (Button) findViewById(R.id.btn_resume_info_save);
 
-        back.setOnClickListener(view -> finish());
         save.setOnClickListener(view -> {
 
         });
